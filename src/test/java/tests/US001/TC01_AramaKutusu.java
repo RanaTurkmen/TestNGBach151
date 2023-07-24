@@ -12,5 +12,7 @@ public class TC01_AramaKutusu {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
         Page page = new Page();
         page.aramaKutusu.sendKeys("Iphone" , Keys.ENTER);
+        Driver.closeDriver();
+        //Amazon sayfasina gidilip arama kutusu test edildi
     }
 }
