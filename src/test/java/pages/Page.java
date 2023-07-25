@@ -7,7 +7,7 @@ public class Page {
     public Page(){
         PageFactory.initElements(Driver.getDriver() , this);
     }
-    //Fatih-US-01-02
+    //M.Fatih-US-01-02
 
 
 
@@ -57,7 +57,7 @@ public class Page {
 
 
 
-    //Fatih-US-01-02
+    //M.Fatih-US-01-02
     //Hanife-US-03-04
 
 
