@@ -9,8 +9,6 @@ public class Page {
     public Page(){
         PageFactory.initElements(Driver.getDriver() , this);
     }
-    @FindBy(id = "twotabsearchtextbox")
-    public WebElement aramaKutusu;
     //Fatih
 
 
