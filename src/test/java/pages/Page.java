@@ -1,7 +1,5 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -9,9 +7,7 @@ public class Page {
     public Page(){
         PageFactory.initElements(Driver.getDriver() , this);
     }
-    @FindBy(id = "twotabsearchtextbox")
-    public WebElement aramaKutusu;
-    //Fatih
+    //Fatih-US-01-02
 
 
 
@@ -51,7 +47,18 @@ public class Page {
 
 
 
-    //Fatih
+
+
+
+
+
+
+
+
+
+
+    //Fatih-US-01-02
+    //Hanife-US-03-04
 
 
 
@@ -70,4 +77,435 @@ public class Page {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Hanife-US-03-04
+    //Kubra-US-05-06
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Kubra-US-05-06
+    //Furkan-US-07-08
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Furkan-US-07-08
+    //Rana-US-09-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Rana-US-09-10
+    //Ali-US-11-12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Ali-US-11-12
+    //Ilyas-US-13-14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Ilyas-US-13-14
+    //Oguzhan-US-15-16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Oguzhan-US-15-16
+    //Sirma-US-17-18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Sirma-US-17-18
+    //Mesut-US-19-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Mesut-US-19-20
 }
