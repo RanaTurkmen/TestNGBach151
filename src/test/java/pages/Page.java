@@ -627,6 +627,46 @@ public class Page {
 
     //Ali-US-11-12
     //Ilyas-US-13-14
+    @FindBy(xpath = "//*[@class='login inline-type']")
+    public WebElement singInButonu;
+    @FindBy(xpath = "//*[@id='reg_username']")
+    public WebElement usernameRegister;
+    @FindBy(xpath = "//*[@id='reg_email']")
+    public WebElement mail;
+    @FindBy(xpath = "//*[@id='reg_password']")
+    public WebElement passwordRegister;
+    @FindBy(xpath = "//*[@id='register-policy']")
+    public WebElement agree;
+    @FindBy(xpath = "//*[@name='register']")
+    public WebElement register;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement singOut;
+    @FindBy(xpath = "(//a[@href='https://allovercommerce.com/my-account-2/edit-address/'])[1]")
+    public WebElement adresses;
+    @FindBy(xpath = "//*[@href='https://allovercommerce.com/my-account-2/edit-address/shipping/']")
+    public WebElement shippingAdd;
+    @FindBy(xpath = "//*[@id='shipping_first_name']")
+    public WebElement shippingName;
+    @FindBy(xpath = "//*[@id='shipping_last_name']")
+    public WebElement shippingLastName;
+    @FindBy(xpath = "//*[@name='shipping_address_1']")
+    public WebElement street;
+    @FindBy(xpath = "//*[@id='shipping_postcode']")
+    public WebElement zipCode;
+    @FindBy(xpath = "//*[@id='select2-shipping_state-container']")
+    public WebElement province;
+    @FindBy(xpath = "//*[@name='save_address']")
+    public WebElement save;
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
+    public WebElement succefully;
+    @FindBy(xpath = "//*[@id='shipping_city']")
+    public WebElement city;
+    @FindBy(xpath = "//*[@id='shipping_state']")
+    public WebElement state;
+    @FindBy(xpath = "//*[@id='shipping_state']")
+    public WebElement country;
+    @FindBy(xpath = "//*[@id='shipping_country']")
+    public WebElement region;
 
 
 
