@@ -1,4 +1,4 @@
-package tests.US009;
+package tests.Rana.US009;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WindowType;
@@ -8,25 +8,36 @@ import org.testng.asserts.SoftAssert;
 import pages.Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ExtentReport;
 import utilities.ReusableMethods;
 
-public class TC001 {
+public class TC001 extends ExtentReport {
     @Test
     public void test01() {
+
         //Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-        String handle1=Driver.getDriver().getWindowHandle();
+        //extentTest.info("Anasayfaya gidildi.");
+
         //Register butonuna tikla
         Page page=new Page();
         page.registion.click();
         ReusableMethods.bekle(2);
+        //extentTest.info("Register butonuna tiklandi.");
+
         //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(page.BecomeVendor.isDisplayed());
+        //extentTest.pass("Çıkan ekranda 'Become a Vendor' yazısının göründüğü doğrulandı.");
+
         //Çıkan ekranda "Become a Vendor" butonuna tıkla.
         page.BecomeVendor.click();
+        //extentTest.info("Become a Vendor butonuna tiklandi.");
+
         //Vendor Registration sayfasını doğrula.
         softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"),page.VendorRegistrationYazisi.getText());
+        //extentTest.pass("Vendor Registration sayfasina gidildiği doğrulandı.");
+
         //Email alanina email gir.
         Driver.getDriver().switchTo().newWindow(WindowType.WINDOW);
         ReusableMethods.window(1);
@@ -39,12 +50,17 @@ public class TC001 {
         Actions actions =new Actions(Driver.getDriver());
         actions.keyDown(Keys.CONTROL).sendKeys("v").release().perform();
         ReusableMethods.bekle(2);
+        //extentTest.info("Email alanina email girildi.");
+
         //Email alanı dışında boşluğa tıkla.
         page.bosluk.click();
+        //extentTest.info("Email alanı dışında boşluğa tıklandı.");
+
         //mesajın "Verification code sent to your email: " içerdiğini doğrula.
         ReusableMethods.visibleWait(page.verification,10);
         System.out.println(page.verification.getText());
         softAssert.assertTrue(page.verification.getText().contains(ConfigReader.getProperty("sentToYourEmail")));
+
         //Emaile gelen doğrulma kodunu Verification Code text kutusuna gir.
         ReusableMethods.bekle(10);
         ReusableMethods.window(1);
@@ -59,6 +75,7 @@ public class TC001 {
 
         page.veryficationCodeKutusu.click();
         actions.keyDown(Keys.CONTROL).sendKeys("v").perform();
+        //extentTest.info("Emaile gelen doğrulma kodu Verification Code text kutusuna girildi.");
         //Password alanina en az 6 karakterli kucuk harf, büyük harf, rakam ve special karakter içeren password gir.
         //Confirm Password alanina aynı password gir.
         //Register butonuna tikla
@@ -67,15 +84,23 @@ public class TC001 {
                 ConfigReader.getProperty("gecerliPassword"),
                 Keys.TAB,
                 ConfigReader.getProperty("gecerliPassword"),Keys.ENTER);
+        extentTest.info("Password alanina password girildi.");
+        extentTest.info("Confirm Password alanina alanina password girildi.");
+        extentTest.info("Register butonuna tiklandi.");
 
-        //page.registion.click();
+
+
         //"Registration Successfully Completed. "Yazısın çıktığını doğrula
         ReusableMethods.bekle(2);
         softAssert.assertEquals(ConfigReader.getProperty("RegistrationSuccessfully"),page.successlogin.getText());
+        //extentTest.pass("'Registration Successfully Completed. ' yazısın çıktığı doğrulandı");
+
+
         //Yeni açılan sayfada "Welcome to Allover Commerce!" yazısını görüdüğünü doğrula
         ReusableMethods.bekle(2);
         softAssert.assertEquals(ConfigReader.getProperty("WelcometoAllover"),page.welcome.getText());
-
+        //extentTest.pass("'Welcome to Allover Commerce!' yazısın çıktığı doğrulandı");
         softAssert.assertAll();
+        //extentReports.flush();
     }
 }

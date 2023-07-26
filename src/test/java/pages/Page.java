@@ -212,6 +212,10 @@ public class Page {
     //Rana-US-09-10/211-260
     @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registion;
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement signIn;
+    @FindBy(xpath = "//a[.='Sign Up']")
+    public WebElement signUp;
     @FindBy(xpath = "(//a[@href='https://allovercommerce.com/vendor-register/'])[2]")
     public WebElement BecomeVendor;
     @FindBy(xpath = "(//h2)[1]")
@@ -232,11 +236,11 @@ public class Page {
     public WebElement bosluk;
     @FindBy(xpath = "(//input)[5]")
     public WebElement resendCode;
-    @FindBy(css = "#passoword")
+    @FindBy(xpath = "(//input[@type='password'])[1]")
     public WebElement password;
     @FindBy(xpath = "(//input)[7]")
     public WebElement confirmPassword;
-    @FindBy(xpath = "(//input)[8]")
+    @FindBy(css = "#wcfm_membership_register_button")
     public WebElement submit;
     @FindBy(id = "password_strength")
     public WebElement verifyPassword;
@@ -246,13 +250,12 @@ public class Page {
     public WebElement erroremail;
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-success']")
     public WebElement successlogin;
-    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']")
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']")//confirm password altı
     public WebElement messageError;
     @FindBy(xpath = "(//h1)[2]")
     public WebElement welcome;
     @FindBy(xpath = "//b")
     public WebElement code;
-
     //Rana-US-09-10
     //Ali-US-11-12
 
