@@ -1,15 +1,33 @@
 package pages;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 public class Page {
-    public Page(){
-        PageFactory.initElements(Driver.getDriver() , this);
-    }
+  public Page(){ PageFactory.initElements(Driver.getDriver() , this);}
 
+  
+    //Fatih-US-01-02
+    @FindBy(xpath = "//*[@class='logo']")
+    public WebElement anaSayfa;
+    @FindBy(xpath = "//*[@class='register inline-type']")
+    public WebElement registerButton;
+    @FindBy(xpath = "(//*[@id='reg_username'])[1]")
+    public WebElement username;
+    @FindBy(xpath = "(//*[@id='reg_email'])[1]")
+    public WebElement emailClick;
+    @FindBy(xpath = "//*[@id='reg_password']")
+    public WebElement passwordClick;
+    @FindBy(xpath = "//*[@id='register-policy']")
+    public WebElement IAgreeButton;
+    @FindBy(xpath = "(//*[@type='submit'])[2]")
+    public WebElement signUp;
+    @FindBy(xpath = "(//*[@class='w-icon-account'])[1]")
+    public WebElement signOutButton;
+    @FindBy(xpath = "(//*[@class='submit-status'])[2]")
+    public WebElement kayitliHesap;
+    @FindBy(xpath = "//*[@class='color cetc']")
+    public WebElement fakeMailCopy;
 
 
 
@@ -187,6 +205,8 @@ public class Page {
 
 
 
+    //Hanife-US-03-04
+    //Kubra-US-05-06
 
 
 
@@ -364,60 +384,9 @@ public class Page {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @FindBy(xpath = "//a[@class='register inline-type']")
+  
+  
+     @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registion;
     @FindBy(xpath = "//span[.='Sign In']")
     public WebElement signIn;
@@ -512,8 +481,325 @@ public class Page {
 
 
 
-    //Sirma-US-17-18
-    //Mesut-US-19-20
+
+
+
+
+
+
+
+    //Ali-US-11-12
+    //Ilyas-US-13-14
+    @FindBy(xpath = "//*[@class='login inline-type']")
+    public WebElement singInButonu;
+    @FindBy(xpath = "//*[@id='reg_username']")
+    public WebElement usernameRegister;
+    @FindBy(xpath = "//*[@id='reg_email']")
+    public WebElement mail;
+    @FindBy(xpath = "//*[@id='reg_password']")
+    public WebElement passwordRegister;
+    @FindBy(xpath = "//*[@id='register-policy']")
+    public WebElement agree;
+    @FindBy(xpath = "//*[@name='register']")
+    public WebElement register;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement singOut;
+    @FindBy(xpath = "(//a[@href='https://allovercommerce.com/my-account-2/edit-address/'])[1]")
+    public WebElement adresses;
+    @FindBy(xpath = "//*[@href='https://allovercommerce.com/my-account-2/edit-address/shipping/']")
+    public WebElement shippingAdd;
+    @FindBy(xpath = "//*[@id='shipping_first_name']")
+    public WebElement shippingName;
+    @FindBy(xpath = "//*[@id='shipping_last_name']")
+    public WebElement shippingLastName;
+    @FindBy(xpath = "//*[@name='shipping_address_1']")
+    public WebElement street;
+    @FindBy(xpath = "//*[@id='shipping_postcode']")
+    public WebElement zipCode;
+    @FindBy(xpath = "//*[@id='select2-shipping_state-container']")
+    public WebElement province;
+    @FindBy(xpath = "//*[@name='save_address']")
+    public WebElement save;
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
+    public WebElement succefully;
+    @FindBy(xpath = "//*[@id='shipping_city']")
+    public WebElement city;
+    @FindBy(xpath = "//*[@id='shipping_state']")
+    public WebElement state;
+    @FindBy(xpath = "//*[@id='shipping_state']")
+    public WebElement country;
+    @FindBy(xpath = "//*[@id='shipping_country']")
+    public WebElement region;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
