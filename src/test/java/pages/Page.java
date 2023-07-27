@@ -97,6 +97,7 @@ public class Page {
 
 
 
+//Hanife 
 
 
 
@@ -195,7 +196,7 @@ public class Page {
 
 
 
-    //Hanife-US-03-04
+  
     //Kubra-US-05-06
 
 
@@ -296,7 +297,7 @@ public class Page {
 
 
 
-
+//Furkan
 
 
 
@@ -375,7 +376,28 @@ public class Page {
 
 
   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //Rana
      @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registion;
     @FindBy(xpath = "//span[.='Sign In']")
@@ -476,10 +498,106 @@ public class Page {
 
 
 
-
-
     //Ali-US-11-12
-    //Ilyas-US-13-14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //İlyas
     @FindBy(xpath = "//*[@class='login inline-type']")
     public WebElement singInButonu;
     @FindBy(xpath = "//*[@id='reg_username']")
@@ -579,7 +697,7 @@ public class Page {
 
 
 
-
+//Oğuzhan
 
 
 
@@ -679,6 +797,7 @@ public class Page {
 
 
 
+//Sırma
 
 
 
@@ -778,8 +897,7 @@ public class Page {
 
 
 
-
-
+//Mesut
 
 
 
