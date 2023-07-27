@@ -45,6 +45,7 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
 
         //5	"Lütfen bu alanı doldurun" mesajının görünürlüğünü doğrula(Username alanı)
         String msg = Driver.getDriver().findElement(By.id("username")).getAttribute("validationMessage");
+        ReusableMethods.tumSayfaResmi("US001-TC02 Username");
         System.out.println(msg);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg.contains("Please fill out this field."));
@@ -62,6 +63,7 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
 
         //8	"Lütfen bu alanı doldurun" mesajının görünürlüğünü doğrula(email alanı)
         String msg1 = Driver.getDriver().findElement(By.xpath("(//*[@id='reg_email'])[1]")).getAttribute("validationMessage");
+        ReusableMethods.tumSayfaResmi("US001-TC02 Email");
         System.out.println(msg1);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg1.contains("Please fill out this field."));
@@ -79,6 +81,7 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
 
         //11	Lütfen e-posta adresine bir  @" işareti ekleyin" mesajının görünür oldugunu doğrula
         String msg2 = Driver.getDriver().findElement(By.xpath("(//*[@id='reg_email'])[1]")).getAttribute("validationMessage");
+        ReusableMethods.tumSayfaResmi("US001-TC02 Email @ isareti");
         System.out.println(msg2);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg2.contains("Please include an '@' in the email address. 'crowley.aadvikfixedfor' is missing an '@'."));
@@ -98,6 +101,7 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
 
         //14	"Lütfen  "@" işaretinden sonra gelen kısmı ekleyin"  mesajını doğrula
         String msg3 = Driver.getDriver().findElement(By.xpath("(//*[@id='reg_email'])[1]")).getAttribute("validationMessage");
+        ReusableMethods.tumSayfaResmi("US001-TC02 Email @ isaretinden sonra ki kisim");
         System.out.println(msg3);
         ReusableMethods.bekle(2);
         page.emailClick.clear();
@@ -110,7 +114,7 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
         Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
         Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
         page.fakeMailCopy.click();
-        extentTest.info("Fake mail sayfasina gidildi ve gecerli bir email alindi");
+        extentTest.info("Gecerli bir email alindi");
 
         Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
         ReusableMethods.bekle(2);
@@ -120,10 +124,12 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
 
         //16	SİGN UP butonuna tıkla
         page.signUp.click();
+        ReusableMethods.bekle(2);
         extentTest.info("Sign Up butonuna tiklandi");
 
         //17	"Lütfen bu alanı doldurun" mesajınin görünürlüğünü dogrula(password alanı)
         String msg4 = Driver.getDriver().findElement(By.id("password")).getAttribute("validationMessage");
+        ReusableMethods.tumSayfaResmi("US001-TC02 Password");
         System.out.println(msg4);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg4.contains("Please fill out this field."));
