@@ -1,15 +1,12 @@
 package pages;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 public class Page {
     public Page(){
         PageFactory.initElements(Driver.getDriver() , this);
     }
-
     //Fatih-US-01-02
     @FindBy(xpath = "//*[@class='logo']")
     public WebElement anaSayfa;
@@ -31,24 +28,14 @@ public class Page {
     public WebElement kayitliHesap;
     @FindBy(xpath = "//*[@class='color cetc']")
     public WebElement fakeMailCopy;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//*[@aria-live='polite'])[1]")
+    public WebElement passwordVerify;
+    @FindBy(xpath = "//*[@class='icon-box-icon icon-logout']")
+    public WebElement cikisYap;
+    @FindBy(xpath = "//*[@value='Sign Up']")
+    public WebElement signUpButton;
+    @FindBy(xpath = "(//h2)")
+    public WebElement MyAccount;
 
 
 
