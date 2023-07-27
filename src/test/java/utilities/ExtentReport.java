@@ -16,6 +16,7 @@ public abstract class ExtentReport {
     protected static ExtentReports extentReports;
     protected static ExtentTest extentTest;
     protected static ExtentHtmlReporter extentHtmlReporter;
+
     @BeforeTest(alwaysRun = true)
     public void setUpTest() {
         extentReports = new ExtentReports();
@@ -28,6 +29,7 @@ public abstract class ExtentReport {
         extentHtmlReporter.config().setDocumentTitle("Extent Report");
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
+
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
         if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
@@ -38,7 +40,7 @@ public abstract class ExtentReport {
         } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
             extentTest.skip("Test Case is skipped: " + result.getName());
         }
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @AfterTest(alwaysRun = true)
