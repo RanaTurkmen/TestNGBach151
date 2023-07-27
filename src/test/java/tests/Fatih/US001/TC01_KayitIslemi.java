@@ -50,7 +50,7 @@ public class TC01_KayitIslemi {
         page.signUp.click();
         ReusableMethods.bekle(10);
 
-        //"My Account" yazısının görünürlüğünü dogrula
+        //Giris yapildigini dogrula
         softAssert.assertTrue(page.signOutButton.isDisplayed());
         softAssert.assertAll();
     }
