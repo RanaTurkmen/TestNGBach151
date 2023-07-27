@@ -9,7 +9,6 @@ public class Page {
     public Page(){
         PageFactory.initElements(Driver.getDriver() , this);
     }
-    //Fatih-US-01-02
 
 
 
@@ -59,8 +58,6 @@ public class Page {
 
 
 
-    //Fatih-US-01-02
-    //Hanife-US-03-04
 
 
 
@@ -109,8 +106,6 @@ public class Page {
 
 
 
-    //Hanife-US-03-04
-    //Kubra-US-05-06
 
 
 
@@ -159,8 +154,6 @@ public class Page {
 
 
 
-    //Kubra-US-05-06
-    //Furkan-US-07-08
 
 
 
@@ -208,8 +201,222 @@ public class Page {
 
 
 
-    //Furkan-US-07-08
-    //Rana-US-09-10/211-260
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registion;
     @FindBy(xpath = "//span[.='Sign In']")
@@ -257,162 +464,6 @@ public class Page {
     @FindBy(xpath = "//b")
     public WebElement code;
     //Rana-US-09-10
-    //Ali-US-11-12
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Ali-US-11-12
-    //Ilyas-US-13-14
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Ilyas-US-13-14
-    //Oguzhan-US-15-16
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Oguzhan-US-15-16
-    //Sirma-US-17-18
 
 
 
