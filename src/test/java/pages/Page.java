@@ -402,8 +402,8 @@ public class Page {
     public WebElement registion;
     @FindBy(xpath = "//span[.='Sign In']")
     public WebElement signIn;
-    @FindBy(xpath = "//a[.='Sign Up']")
-    public WebElement signUp;
+    //@FindBy(xpath = "//a[.='Sign Up']")
+    //public WebElement signUp;
     @FindBy(xpath = "(//a[@href='https://allovercommerce.com/vendor-register/'])[2]")
     public WebElement BecomeVendor;
     @FindBy(xpath = "(//h2)[1]")
