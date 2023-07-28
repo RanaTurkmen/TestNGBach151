@@ -412,8 +412,6 @@ public class Page {
     public WebElement fakeEmailCopy;
     @FindBy(xpath = "//tr[@class='hidden-xs hidden-sm klikaciRadek newMail']")
     public WebElement fakeEmailCode;
-    @FindBy(xpath = "(//span[@class='wcicon-status-cancelled'])[1]")
-    public WebElement This_field_is_required;//4 mesajı tab yaparak dogrula
     @FindBy(xpath = "(//input)[3]")
     public WebElement email;
     @FindBy(xpath = "//div[@class='wcfm-message email_verification_message wcfm-success']")
@@ -428,15 +426,13 @@ public class Page {
     public WebElement password;
     @FindBy(xpath = "(//input)[7]")
     public WebElement confirmPassword;
-    @FindBy(css = "#wcfm_membership_register_button")
+    @FindBy(xpath = "//input[@value='Register']")
     public WebElement submit;
     @FindBy(id = "password_strength")
     public WebElement verifyPassword;
-    @FindBy(xpath = "//*[@class='wcfm-message email_verification_message wcfm-success']")
-    public WebElement successemail;
     @FindBy(xpath = "//div[@class='wcfm-message email_verification_message wcfm-error']")
     public WebElement erroremail;
-    @FindBy(xpath = "//div[@class='wcfm-message wcfm-success']")
+    @FindBy(xpath = "//*[.='Registration Successfully Completed.']")
     public WebElement successlogin;
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']")//confirm password altı
     public WebElement messageError;
@@ -444,6 +440,9 @@ public class Page {
     public WebElement welcome;
     @FindBy(xpath = "//b")
     public WebElement code;
+    @FindBy(css = ".login-popup")
+    public WebElement become;
+
     //Rana-US-09-10
 
 
