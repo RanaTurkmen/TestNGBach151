@@ -110,16 +110,7 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
         extentTest.pass("Hata mesaji alindi ve test edildi");
 
         //15	email alanına gecerli bır email gir
-        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
-        Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
-        page.fakeMailCopy.click();
-        extentTest.info("Gecerli bir email alindi");
-
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
-        ReusableMethods.bekle(2);
-        page.emailClick.sendKeys(Keys.CONTROL, "v");
-        ReusableMethods.bekle(2);
+        ReusableMethods.fakeMail();
         extentTest.info("Email alanina tiklandi ve gecerli bir email girildi");
 
         //16	SİGN UP butonuna tıkla
