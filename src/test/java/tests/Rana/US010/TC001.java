@@ -7,6 +7,7 @@ import pages.Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
+import utilities.ReusableMethods;
 
 public class TC001 extends ExtentReport {
     /*
@@ -49,6 +50,8 @@ public class TC001 extends ExtentReport {
         //"Too short" mesajının göründüğünü doğrula.
         Assert.assertEquals(ConfigReader.getProperty("short"),page.verifyPassword.getText());
         extentTest.info("Too short mesajının göründüğü doğrulandı.");
+        ReusableMethods.webElementResmi(page.verifyPassword);
+        extentTest.info("Webelement resmi alındı.(Too short)");
 
         //Passwordu alanındaki passwordu sil.
         page.password.clear();
@@ -62,7 +65,8 @@ public class TC001 extends ExtentReport {
         //"Weak" mesajının göründüğünü doğrula.
         Assert.assertEquals("Weak",page.verifyPassword.getText());
         extentTest.pass("Weak mesajının göründüğü doğrulandı.");
-
+        ReusableMethods.webElementResmi(page.verifyPassword);
+        extentTest.info("Webelement resmi alındı.(Weak)");
         //Passwordu alanındaki passwordu sil.
         page.password.clear();
         extentTest.info("Passwordu alanındaki password silindi.");
@@ -74,7 +78,8 @@ public class TC001 extends ExtentReport {
         //"Good" mesajının göründüğünü doğrula.
         Assert.assertEquals("Good",page.verifyPassword.getText());
         extentTest.pass("Good mesajının göründüğü doğrulandı.");
-
+        ReusableMethods.webElementResmi(page.verifyPassword);
+        extentTest.info("Webelement resmi alındı.(Good)");
         //Passwordu alanındaki passwordu sil.
         page.password.clear();
         extentTest.info("Passwordu alanındaki password silindi.");
@@ -86,7 +91,8 @@ public class TC001 extends ExtentReport {
         //"Good" mesajının göründüğünü doğrula.
         Assert.assertEquals("Good",page.verifyPassword.getText());
         extentTest.pass("Good mesajının göründüğü doğrulandı.");
-
+        ReusableMethods.webElementResmi(page.verifyPassword);
+        extentTest.info("Webelement resmi alındı.(Good)");
         //Passwordu alanındaki passwordu sil.
         page.password.clear();
         extentTest.info("Passwordu alanındaki password silindi.");
@@ -98,7 +104,8 @@ public class TC001 extends ExtentReport {
         //"Strong" mesajının göründüğünü doğrula.
         Assert.assertEquals("Strong",page.verifyPassword.getText());
         extentTest.pass("Strong mesajının göründüğü doğrulandı.");
-
+        ReusableMethods.webElementResmi(page.verifyPassword);
+        extentTest.info("Webelement resmi alındı.(Strong)");
         //Passwordu alanındaki passwordu sil.
         page.password.clear();
         extentTest.info("Passwordu alanındaki password silindi.");
@@ -110,5 +117,7 @@ public class TC001 extends ExtentReport {
         //"Strong" mesajının göründüğünü doğrula.
         Assert.assertEquals("Strong",page.verifyPassword.getText());
         extentTest.pass("Strong mesajının göründüğü doğrulandı.");
+        ReusableMethods.webElementResmi(page.verifyPassword);
+        extentTest.info("Webelement resmi alındı.(Strong)");
     }
 }

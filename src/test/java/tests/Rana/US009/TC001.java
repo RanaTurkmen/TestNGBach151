@@ -109,7 +109,7 @@ public class TC001 extends ExtentReport {
         extentTest.info("Emaile gelen doğrulma kodunu Verification Code text kutusuna girildi.");
 
         //"Registration Successfully Completed. "Yazısın çıktığını doğrula
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
         softAssert.assertEquals(ConfigReader.getProperty("registionSuccess"), page.successlogin.getText());
         extentTest.pass("Registration Successfully Completed. Yazısın çıktığını doğrula");
         ReusableMethods.webElementResmi(page.successlogin);
