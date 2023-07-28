@@ -1,16 +1,41 @@
 package pages;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
 public class Page {
-    public Page(){
-        PageFactory.initElements(Driver.getDriver() , this);
-    }
 
+  public Page(){ PageFactory.initElements(Driver.getDriver() , this);}
 
+    //Fatih-US-01-02
+    @FindBy(xpath = "//*[@class='logo']")
+    public WebElement anaSayfa;
+    @FindBy(xpath = "//*[@class='register inline-type']")
+    public WebElement registerButton;
+    @FindBy(xpath = "(//*[@id='reg_username'])[1]")
+    public WebElement username;
+    @FindBy(xpath = "(//*[@id='reg_email'])[1]")
+    public WebElement emailClick;
+    @FindBy(xpath = "//*[@id='reg_password']")
+    public WebElement passwordClick;
+    @FindBy(xpath = "//*[@id='register-policy']")
+    public WebElement IAgreeButton;
+    @FindBy(xpath = "(//*[@type='submit'])[2]")
+    public WebElement signUp;
+    @FindBy(xpath = "(//*[@class='w-icon-account'])[1]")
+    public WebElement signOutButton;
+    @FindBy(xpath = "(//*[@class='submit-status'])[2]")
+    public WebElement kayitliHesap;
+    @FindBy(xpath = "//*[@class='color cetc']")
+    public WebElement fakeMailCopy;
+    @FindBy(xpath = "(//*[@aria-live='polite'])[1]")
+    public WebElement passwordVerify;
+    @FindBy(xpath = "//*[@class='icon-box-icon icon-logout']")
+    public WebElement cikisYap;
+    @FindBy(xpath = "//*[@value='Sign Up']")
+    public WebElement signUpButton;
+    @FindBy(xpath = "(//h2)")
+    public WebElement MyAccount;
 
 
 
@@ -72,6 +97,7 @@ public class Page {
 
 
 
+//Hanife 
 
 
 
@@ -170,6 +196,8 @@ public class Page {
 
 
 
+  
+    //Kubra-US-05-06
 
 
 
@@ -269,6 +297,7 @@ public class Page {
 
 
 
+//Furkan
 
 
 
@@ -346,6 +375,7 @@ public class Page {
 
 
 
+  
 
 
 
@@ -367,62 +397,13 @@ public class Page {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @FindBy(xpath = "//a[@class='register inline-type']")
+  //Rana
+     @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registion;
     @FindBy(xpath = "//span[.='Sign In']")
     public WebElement signIn;
-    @FindBy(xpath = "//a[.='Sign Up']")
-    public WebElement signUp;
+    //@FindBy(xpath = "//a[.='Sign Up']")
+    //public WebElement signUp;
     @FindBy(xpath = "(//a[@href='https://allovercommerce.com/vendor-register/'])[2]")
     public WebElement BecomeVendor;
     @FindBy(xpath = "(//h2)[1]")
@@ -511,8 +492,421 @@ public class Page {
 
 
 
-    //Sirma-US-17-18
-    //Mesut-US-19-20
+
+
+
+
+
+    //Ali-US-11-12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //İlyas
+    @FindBy(xpath = "//*[@class='login inline-type']")
+    public WebElement singInButonu;
+    @FindBy(xpath = "//*[@id='reg_username']")
+    public WebElement usernameRegister;
+    @FindBy(xpath = "//*[@id='reg_email']")
+    public WebElement mail;
+    @FindBy(xpath = "//*[@id='reg_password']")
+    public WebElement passwordRegister;
+    @FindBy(xpath = "//*[@id='register-policy']")
+    public WebElement agree;
+    @FindBy(xpath = "//*[@name='register']")
+    public WebElement register;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement singOut;
+    @FindBy(xpath = "(//a[@href='https://allovercommerce.com/my-account-2/edit-address/'])[1]")
+    public WebElement adresses;
+    @FindBy(xpath = "//*[@href='https://allovercommerce.com/my-account-2/edit-address/shipping/']")
+    public WebElement shippingAdd;
+    @FindBy(xpath = "//*[@id='shipping_first_name']")
+    public WebElement shippingName;
+    @FindBy(xpath = "//*[@id='shipping_last_name']")
+    public WebElement shippingLastName;
+    @FindBy(xpath = "//*[@name='shipping_address_1']")
+    public WebElement street;
+    @FindBy(xpath = "//*[@id='shipping_postcode']")
+    public WebElement zipCode;
+    @FindBy(xpath = "//*[@id='select2-shipping_state-container']")
+    public WebElement province;
+    @FindBy(xpath = "//*[@name='save_address']")
+    public WebElement save;
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
+    public WebElement succefully;
+    @FindBy(xpath = "//*[@id='shipping_city']")
+    public WebElement city;
+    @FindBy(xpath = "//*[@id='shipping_state']")
+    public WebElement state;
+    @FindBy(xpath = "//*[@id='shipping_state']")
+    public WebElement country;
+    @FindBy(xpath = "//*[@id='shipping_country']")
+    public WebElement region;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Oğuzhan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Sırma
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Mesut
+
+
+
+
+
+
+
+
+
+
 
 
 
