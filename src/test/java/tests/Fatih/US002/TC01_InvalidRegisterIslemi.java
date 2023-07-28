@@ -69,14 +69,7 @@ public class TC01_InvalidRegisterIslemi extends ExtentReport {
         // Email alanına tıkla  ve kayıtlı olmayan email gir
         page.emailClick.clear();
         ReusableMethods.bekle(2);
-        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
-        Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
-        page.fakeMailCopy.click();
-        ReusableMethods.bekle(3);
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
-        ReusableMethods.bekle(2);
-        page.emailClick.sendKeys(Keys.CONTROL , "v");
+        ReusableMethods.fakeMail();
         ReusableMethods.bekle(2);
         extentTest.info("Email alanina tiklandi ve gecerli bir Email girildi");
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.Page;
 
 import java.io.File;
 import java.io.IOException;
@@ -180,7 +181,16 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+    public static void fakeMail(){
+        Page page = new Page();
+        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
+        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
+        Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
+        page.fakeMailCopy.click();
 
-
-
+        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
+        ReusableMethods.bekle(2);
+        page.emailClick.sendKeys(Keys.CONTROL , "v");
+        ReusableMethods.bekle(2);
+    }
 }

@@ -36,15 +36,7 @@ public class TC01_KayitIslemi extends ExtentReport {
         extentTest.info("Username alanina tiklandi ve bir username girildi");
 
         //Email alanına tıkla  email gir
-        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
-        Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
-        page.fakeMailCopy.click();
-
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
-        ReusableMethods.bekle(2);
-        page.emailClick.sendKeys(Keys.CONTROL , "v");
-        ReusableMethods.bekle(2);
+        ReusableMethods.fakeMail();
         extentTest.info("Email alanina tiklandi ve gecerli bir Email girildi");
 
         //Password en az 12 karakterli harf ve rakam içeren bir password gir
