@@ -1,10 +1,12 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.Page;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -182,8 +184,9 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
     //FileUpload
-    public static void uploadFileFromPc(String dosyaYolu){
+    public static void uploadFileFromPc(String dosyaYolu) {
         StringSelection stringSelection = new StringSelection(dosyaYolu);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
         try {
@@ -205,5 +208,18 @@ public class ReusableMethods {
         robot.delay(1000);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+    }
+    public static void fakeMail(){
+        Page page = new Page();
+        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
+        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
+        Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
+        page.fakeMailCopy.click();
+
+        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
+        ReusableMethods.bekle(2);
+        page.emailClick.sendKeys(Keys.CONTROL , "v");
+        ReusableMethods.bekle(2);
+
     }
 }
