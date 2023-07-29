@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Page;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -181,6 +184,31 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
+    //FileUpload
+    public static void uploadFileFromPc(String dosyaYolu) {
+        StringSelection stringSelection = new StringSelection(dosyaYolu);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+        robot.delay(1000);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.delay(1000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+    }
     public static void fakeMail(){
         Page page = new Page();
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
@@ -192,5 +220,6 @@ public class ReusableMethods {
         ReusableMethods.bekle(2);
         page.emailClick.sendKeys(Keys.CONTROL , "v");
         ReusableMethods.bekle(2);
+
     }
 }
