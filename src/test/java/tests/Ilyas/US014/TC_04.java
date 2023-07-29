@@ -1,9 +1,8 @@
-package tests.Ilyas.US013;
+package tests.Ilyas.US014;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.Page;
@@ -11,19 +10,18 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
-
+public class TC_04 {
     @Test
-    public void test001() {
+    public void test01() {
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
 
         //Register butonuna tikla
-        Page page=new Page();
+        Page page = new Page();
         page.registion.click();
         ReusableMethods.bekle(2);
 
         //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
-        SoftAssert softAssert=new SoftAssert();
+        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(page.BecomeVendor.isDisplayed());
         //extentTest.pass("Çıkan ekranda 'Become a Vendor' yazısının göründüğü doğrulandı.");
 
@@ -31,7 +29,7 @@ public class TC_01 {
         page.vendor1.click();
 
         //Vendor Registration sayfasını doğrula.
-        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"),page.VendorRegistrationYazisi.getText());
+        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), page.VendorRegistrationYazisi.getText());
 
         //Email alanina email gir.
         Driver.getDriver().switchTo().newWindow(WindowType.WINDOW);
@@ -42,7 +40,7 @@ public class TC_01 {
         ReusableMethods.window(0);
         ReusableMethods.bekle(2);
         page.email.click();
-        Actions actions =new Actions(Driver.getDriver());
+        Actions actions = new Actions(Driver.getDriver());
         actions.keyDown(Keys.CONTROL).sendKeys("v").release().perform();
         ReusableMethods.bekle(2);
 
@@ -51,7 +49,7 @@ public class TC_01 {
 
 
         //mesajın "Verification code sent to your email: " içerdiğini doğrula.
-        ReusableMethods.visibleWait(page.verification,10);
+        ReusableMethods.visibleWait(page.verification, 10);
         System.out.println(page.verification.getText());
 
 
@@ -73,44 +71,25 @@ public class TC_01 {
         //Confirm Password alanina aynı password gir.
         //Register butonuna tikla
         page.veryficationCodeKutusu.sendKeys(Keys.PAGE_DOWN);
-        page.veryficationCodeKutusu.sendKeys(Keys.TAB,Keys.TAB,
+        page.veryficationCodeKutusu.sendKeys(Keys.TAB, Keys.TAB,
                 ConfigReader.getProperty("gecerliPassword"),
                 Keys.TAB,
-                ConfigReader.getProperty("gecerliPassword"),Keys.ENTER);
+                ConfigReader.getProperty("gecerliPassword"), Keys.ENTER);
 
+        ReusableMethods.bekle(2);
         page.notRightNow.click();
-        Assert.assertTrue(page.welcomeDashboard.isDisplayed());
-
-        Driver.closeDriver();
-
+        actions.moveToElement(page.pruducts).perform();
+        page.productsAddNew.click();
 
 
-    }
 
-    @Test
-    public void test02() {
-        Driver.getDriver().get("https://allovercommerce.com/");
-        Page page=new Page();
-        page.signIn.click();
-        page.kayitliUsername.sendKeys("naaman.laden");
-        page.kayitliPassword.sendKeys("techpro.41");
-        page.login.click();
-        page.singOut.click();
-        page.adresses.click();
-        page.shippingAdd.click();
-        page.shippingName.sendKeys("ilyas");
-        page.shippingLastName.sendKeys("Çnz");
-        ReusableMethods.scroll(page.region);
-        ReusableMethods.bekle(2);
-        ReusableMethods.ddmIndex(page.region,3);
-        page.street.sendKeys("Cumhuriyet");
-        page.city.sendKeys("Amasya");
-        ReusableMethods.scroll(page.country);
-        ReusableMethods.ddmIndex(page.country,5);
-        page.zipCode.sendKeys("1234");
-        page.save.click();
-        ReusableMethods.bekle(2);
-        Assert.assertTrue(page.succefully.isDisplayed());
+        ReusableMethods.scroll(page.categories);
+
+        ReusableMethods.bekle(5);
+
+        actions.moveToElement(page.uncatogorizied).click();
+
+
 
     }
 }

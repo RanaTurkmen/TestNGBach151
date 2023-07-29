@@ -1,5 +1,6 @@
-package tests.Ilyas.US013;
+package tests.Ilyas.US014;
 
+import com.beust.ah.A;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
@@ -12,9 +13,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_01 {
-
     @Test
-    public void test001() {
+    public void test01() {
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
 
         //Register butonuna tikla
@@ -78,39 +78,22 @@ public class TC_01 {
                 Keys.TAB,
                 ConfigReader.getProperty("gecerliPassword"),Keys.ENTER);
 
+
+
+        ReusableMethods.bekle(2);
         page.notRightNow.click();
-        Assert.assertTrue(page.welcomeDashboard.isDisplayed());
-
-        Driver.closeDriver();
-
-
-
-    }
-
-    @Test
-    public void test02() {
-        Driver.getDriver().get("https://allovercommerce.com/");
-        Page page=new Page();
-        page.signIn.click();
-        page.kayitliUsername.sendKeys("naaman.laden");
-        page.kayitliPassword.sendKeys("techpro.41");
-        page.login.click();
-        page.singOut.click();
-        page.adresses.click();
-        page.shippingAdd.click();
-        page.shippingName.sendKeys("ilyas");
-        page.shippingLastName.sendKeys("Çnz");
-        ReusableMethods.scroll(page.region);
         ReusableMethods.bekle(2);
-        ReusableMethods.ddmIndex(page.region,3);
-        page.street.sendKeys("Cumhuriyet");
-        page.city.sendKeys("Amasya");
-        ReusableMethods.scroll(page.country);
-        ReusableMethods.ddmIndex(page.country,5);
-        page.zipCode.sendKeys("1234");
-        page.save.click();
-        ReusableMethods.bekle(2);
-        Assert.assertTrue(page.succefully.isDisplayed());
+        page.pruducts.click();
+        ReusableMethods.ddmIndex(page.allProduct,1);
+        Assert.assertTrue(page.allProduct.isDisplayed());
+        ReusableMethods.ddmIndex(page.allProduct,4);
+        Assert.assertTrue(page.allProduct.isDisplayed());
+        ReusableMethods.ddmIndex(page.allProduct,5);
+        Assert.assertTrue(page.allProduct.isDisplayed());
+        ReusableMethods.ddmIndex(page.allProduct,6);
+        Assert.assertTrue(page.allProduct.isDisplayed());
+
+
 
     }
 }
