@@ -185,8 +185,12 @@ public class ReusableMethods {
         System.out.println("Attribute Value: = " + attribute_Value);
     }
 
+
+    //pc'den dosya yükleme
+
     //FileUpload
     public static void uploadFileFromPc(String dosyaYolu) {
+
         StringSelection stringSelection = new StringSelection(dosyaYolu);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
         try {
@@ -209,6 +213,7 @@ public class ReusableMethods {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
+
     public static void fakeMail(){
         Page page = new Page();
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
@@ -220,6 +225,7 @@ public class ReusableMethods {
         ReusableMethods.bekle(2);
         page.emailClick.sendKeys(Keys.CONTROL , "v");
         ReusableMethods.bekle(2);
+
 
     }
 }
