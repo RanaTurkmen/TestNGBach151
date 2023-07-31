@@ -109,7 +109,7 @@ public class TC001  extends ExtentReport {
        ReusableMethods.bekle(2);
        extentTest.info("Yeni emal girildi");
 
-       //Biography alani
+       //Biography alanini yazi ile doldur
         Driver.getDriver().switchTo().frame("user_description_ifr");
         page.metinAlani.clear();
         ReusableMethods.bekle(2);
