@@ -178,12 +178,14 @@ public class ReusableMethods {
         js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
     }
 
-    //JS GetAttributeValue
+    /*JS GetAttributeValue
     public static void getValueByJS(String id, String attributeName) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
+     */
 
 
     //pc'den dosya yükleme
@@ -228,4 +230,14 @@ public class ReusableMethods {
 
 
     }
+
+
+    //JS GetAttributeValue
+    public static String getValueByJS(String id, String attributeName) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        return (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+
+
+    }
+
 }
