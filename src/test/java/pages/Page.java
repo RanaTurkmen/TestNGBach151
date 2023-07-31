@@ -135,7 +135,6 @@ public class Page {
 
 
 
-//Sırma
 
 
 
@@ -198,103 +197,105 @@ public class Page {
 
 
 
+     //kubra US 05-06
+     @FindBy(xpath = "//a[@class='login inline-type']")
+     public WebElement signInButton;
+    //@FindBy(xpath = "//*[@id='username']")
+    //public WebElement username;
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement passWord;
+    @FindBy(xpath = "//*[@id='rememberme']")
+    public WebElement rememberButton;
+    @FindBy(xpath = "//*[@name='login']")
+    public WebElement SignIn;
+    @FindBy(xpath = "//div[@id='yith-wcwl-popup-message']")
+    public WebElement mesajVerify;
+    @FindBy(xpath = "//a[@class='login logout inline-type']")
+    public WebElement signOut;
+    @FindBy(tagName = "h2")
+    public WebElement myAccount;
+    @FindBy(linkText = "Account details")
+    public WebElement accountDetails;
+    @FindBy(tagName = "h4")
+    public WebElement accountDetailsYazisi;
+    @FindBy(xpath = "//*[@name='account_first_name']")
+    public WebElement firstnameClear;
+    @FindBy(xpath = "//*[@id='account_first_name']")
+    public WebElement newFirstname;
+    @FindBy(xpath = "//*[@id='account_last_name']")
+    public WebElement lastnameClear;
+    @FindBy(xpath = "//*[@name='account_last_name']")
+    public WebElement newLastname;
+    @FindBy(xpath = "//*[@id='account_display_name']")
+    public WebElement displayNameClear;
+    @FindBy(xpath = "//*[@name='account_display_name']")
+    public WebElement newDisplayName;
+    @FindBy(xpath = "//*[@id='account_email']")
+    public WebElement emailClear;
+    //@FindBy(xpath = "//*[@class='color cetc']")
+    //public WebElement fakeMailCopy;
+    @FindBy(xpath = "//*[@name='account_email']")
+    public WebElement newEmail;
+    @FindBy(tagName = "p")
+    public WebElement metinAlani;
+    @FindBy(xpath = "//*[@name='password_current']")
+    public  WebElement currentPassword;
+    @FindBy(xpath = "//*[@name='password_1']")
+    public WebElement newPassword;
+    @FindBy(xpath = "//*[@name='password_2']")
+    public WebElement confirmPassWord;
+    @FindBy(xpath = "//*[@name='save_account_details']")
+    public WebElement saveChangesButton;
+    @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
+    public WebElement accountDetailsVerify;
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement errorYazisi;
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement errorPassword;
+    @FindBy(xpath = "//*[@aria-label='Search']")
+    public WebElement searchBox;
+    @FindBy(tagName = "div")
+    public WebElement aramaSonucYazisi;
+    @FindBy(linkText = "T-Shirt")
+    public WebElement ilkUrun;
+    @FindBy(tagName = "h1")
+    public WebElement hataVerify;
+    @FindBy(linkText = "Erkek T-shirt")
+    public WebElement ikinciUrun;
+    @FindBy(xpath = "//*[@name='gri']")
+    public WebElement urunRengi;
+    @FindBy(xpath = "//*[@class='single_add_to_cart_button button alt']")
+    public WebElement addToCartButton;
+    @FindBy(xpath = "//div[@id='product-14255']")
+    public WebElement urunVerify;
+    @FindBy(xpath = "//span[@class='cart-label']")
+    public WebElement sepetIkonu;
+    @FindBy(xpath = "//*[@class='button wc-forward']")
+    public WebElement viewCartButton;
+    @FindBy(xpath = "//*[@title='Plus']")
+    public WebElement urunArtirmaButton;
+    @FindBy(xpath = "//*[@class='quantity-minus w-icon-minus']")
+    public WebElement urunAzaltmaButton;
+    @FindBy(xpath = "//*[@class='checkout-button button alt wc-forward']")
+    public WebElement checkOutButton;
+    @FindBy(xpath = "//div[@class='woocommerce-billing-fields']")
+    public WebElement billingDetails;
+    @FindBy(xpath = "//input[@id='payment_method_bacs']")
+    public WebElement wireTransferEFT;
+    @FindBy(xpath = "//*[@value='bacs']")
+    public WebElement eftVerify;
+    @FindBy(xpath = "//input[@id='payment_method_cod']")
+    public WebElement payAtTheDoor;
+    @FindBy(xpath = "//*[@id='place_order']")
+    public WebElement placeOrderButton;
+    @FindBy(xpath = "//*[@class='fas fa-check']")
+    public WebElement siparisMesajVerify;
+    @FindBy(xpath = "//*[@class='woocommerce-order-details']")
+    public WebElement orderDetails;
+    @FindBy(xpath = "//*[@class='woocommerce-customer-details']") public WebElement billingDetailss;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Mesut
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Mesut-US-19-20
 
 
 
