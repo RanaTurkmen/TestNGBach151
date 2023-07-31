@@ -1,8 +1,6 @@
 package tests.Oguzhan.US_16;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,13 +9,6 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
 import utilities.ReusableMethods;
-
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
-import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TC01_VendorSimpleProductEklemeTesti extends ExtentReport {
     @Test
@@ -70,11 +61,11 @@ public class TC01_VendorSimpleProductEklemeTesti extends ExtentReport {
         page.dateFrom.sendKeys("2023-08-10", Keys.TAB, "2023-08-25");
         extentTest.info("Tarih aralığı seçildi");
 
-        //Short Description alanına  bir yazı, Description alanına bir resim ekle
+        //Short Description alanına  bir yazı gir
         page.descriptionAddMedia.click();
-        page.descriptionSelectPic.click();
-        ReusableMethods.uploadFileFromPc(ConfigReader.getProperty("descriptionResimDosyaYolu"));
+        page.mediaLibrary.click();
         ReusableMethods.bekle(3);
+        page.firstLibraryPicture.click();
         page.insertPictureIntoPostButton.click();
         page.shortDescriptonInput.click();
         extentTest.info("Short Description alanına bir metin yazıldı");
@@ -87,27 +78,17 @@ public class TC01_VendorSimpleProductEklemeTesti extends ExtentReport {
 //        Sağ menüden büyük ve küçük resim olmak üzere bilgisayardan iki resim ekle
         ReusableMethods.bekle(2);
         page.addBigPicture.click();
+        page.bigPicture.click();
         ReusableMethods.bekle(3);
-        page.uploadPic.click();
-        ReusableMethods.bekle(3);
-        page.addPicFromPc.click();
-        ReusableMethods.uploadFileFromPc(ConfigReader.getProperty("buyukResimDosyaYolu"));
-        ReusableMethods.bekle(3);
-        page.bigPictureSelectFileButton.click(); //resmi yükledik
-
-//      Kucuk resmi ekle (Kütüphaneden)
+        page.bigPictureSelectFileButton.click();
         page.addSmallPicture.click();
         ReusableMethods.bekle(2);
-        page.smallPicSelectFile.click();
-        page.smallPicUpload.click();
-        ReusableMethods.bekle(3);
-        ReusableMethods.uploadFileFromPc(ConfigReader.getProperty("buyukResimDosyaYolu"));
+        actions.sendKeys(Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB,Keys.TAB, Keys.TAB,Keys.TAB, Keys.ENTER).perform();
         ReusableMethods.bekle(3);
         page.smallPictureAddToGalleryButton.click();
         extentTest.info("Sağ menüdeki resim ekleme alanına 2 adet ürün resmi eklendi");
 
 //        Categories bölümünden ürünün kategorilerini seç
-        ReusableMethods.bekle(2);
         page.vakkoCheckBox.click();
         extentTest.info("Ürünün kategorisi seçildi");
 
@@ -123,7 +104,7 @@ public class TC01_VendorSimpleProductEklemeTesti extends ExtentReport {
         ReusableMethods.ddmIndex(page.catalogVisibility, 2);
         extentTest.info("Catalog visibility dropdown menüsünden seçim yapıldı");
 
-        //Zorunlu alanları doldurmadan ürünü satışa sun
+        //        Zorunlu alanları doldurmadan ürünü satışa sun
         page.submitProductButton.click();
         ReusableMethods.bekle(3);
         Assert.assertTrue(page.failMessage.isDisplayed());
