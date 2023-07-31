@@ -3,6 +3,7 @@ package utilities;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -50,13 +51,7 @@ public class ReusableMethods {
         Driver.getDriver().switchTo().alert().sendKeys(text);
     }
 
-    //DropDown VisibleText
-    /*
-        Select select2 = new Select(gun);
-        select2.selectByVisibleText("7");
 
-        //ddmVisibleText(gun,"7"); --> Yukarıdaki kullanım yerine sadece method ile handle edebilirim
-     */
     public static void ddmVisibleText(WebElement ddm, String secenek) {
         Select select = new Select(ddm);
         select.selectByVisibleText(secenek);
@@ -106,6 +101,7 @@ public class ReusableMethods {
         wait.until(ExpectedConditions.alertIsPresent());
 
     }
+
     //Tüm Sayfa ScreenShot
     public static String tumSayfaResmi(String name) {
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
@@ -181,7 +177,7 @@ public class ReusableMethods {
     /*JS GetAttributeValue
     public static void getValueByJS(String id, String attributeName) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+        String attribute_Value = (String) js.executeScript("return document.getElementById('id')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
 
@@ -216,7 +212,10 @@ public class ReusableMethods {
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
+
+
     public static void fakeMail(){
+
         Page page = new Page();
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
         Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
@@ -225,11 +224,21 @@ public class ReusableMethods {
 
         Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
         ReusableMethods.bekle(2);
-        page.emailClick.sendKeys(Keys.CONTROL , "v");
+        page.emailClick.sendKeys(Keys.CONTROL, "v");
         ReusableMethods.bekle(2);
 
 
     }
+  
+    //TEKRARSIZ COUPON İSMİ OLUSTURMA METHODU
+
+    public static String couponName() {
+        String tarih = new SimpleDateFormat("hhmmssddMMyy").format(new Date());
+        String couponName = "Coupon" + tarih;
+        return couponName;
+    }
+
+
 
 
     //JS GetAttributeValue
@@ -239,5 +248,6 @@ public class ReusableMethods {
 
 
     }
+
 
 }
