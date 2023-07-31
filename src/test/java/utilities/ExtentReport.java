@@ -16,6 +16,7 @@ public abstract class ExtentReport {
     protected static ExtentReports extentReports;
     protected static ExtentTest extentTest;
     protected static ExtentHtmlReporter extentHtmlReporter;
+
     @BeforeTest(alwaysRun = true)
     public void setUpTest() {
         extentReports = new ExtentReports();
@@ -24,12 +25,14 @@ public abstract class ExtentReport {
         extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
         extentReports.attachReporter(extentHtmlReporter);
         extentReports.setSystemInfo("Browser", "Chrome");
-        extentReports.setSystemInfo("Tester", "Erol");
+        extentReports.setSystemInfo("Tester", "Rana");
         extentHtmlReporter.config().setDocumentTitle("Extent Report");
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
+
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
+
        if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
            String screenshotLocation = ReusableMethods.tumSayfaResmi(result.getName());
            extentTest.fail(result.getName());
@@ -39,6 +42,17 @@ public abstract class ExtentReport {
            extentTest.skip("Test Case is skipped: " + result.getName());
        }
         Driver.closeDriver();
+
+        if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
+            String screenshotLocation = ReusableMethods.tumSayfaResmi(result.getName());
+            extentTest.fail(result.getName());
+            extentTest.addScreenCaptureFromPath(screenshotLocation);
+            //extentTest.fail(result.getThrowable());
+        } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
+            extentTest.skip("Test Case is skipped: " + result.getName());
+        }
+        //Driver.closeDriver();
+
     }
 
     @AfterTest(alwaysRun = true)
