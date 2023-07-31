@@ -174,15 +174,21 @@ public class ReusableMethods {
         js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
     }
 
-    //JS GetAttributeValue
+    /*JS GetAttributeValue
     public static void getValueByJS(String id, String attributeName) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         String attribute_Value = (String) js.executeScript("return document.getElementById('id')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
 
+     */
+
+
+    //pc'den dosya yükleme
+
     //FileUpload
     public static void uploadFileFromPc(String dosyaYolu) {
+
         StringSelection stringSelection = new StringSelection(dosyaYolu);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
         try {
@@ -206,7 +212,10 @@ public class ReusableMethods {
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
-    public static void fakeMail() {
+
+
+    public static void fakeMail(){
+
         Page page = new Page();
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
         Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
@@ -218,13 +227,26 @@ public class ReusableMethods {
         page.emailClick.sendKeys(Keys.CONTROL, "v");
         ReusableMethods.bekle(2);
 
+
     }
+  
     //TEKRARSIZ COUPON İSMİ OLUSTURMA METHODU
 
     public static String couponName() {
         String tarih = new SimpleDateFormat("hhmmssddMMyy").format(new Date());
         String couponName = "Coupon" + tarih;
         return couponName;
+    }
+
+
+
+
+    //JS GetAttributeValue
+    public static String getValueByJS(String id, String attributeName) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        return (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+
+
     }
 
 

@@ -42,13 +42,10 @@ public class Page {
     public WebElement MyAccount;
 
 
-//Hanife
 
 
-    //Kubra-US-05-06
 
 
-//Furkan
 
 
 
@@ -77,6 +74,9 @@ public class Page {
 
 
 
+  
+  
+  
 
 
 
@@ -97,6 +97,52 @@ public class Page {
 
 
 
+    @FindBy(xpath = "(//*[text()='My Account'])[2]") public WebElement account;
+    @FindBy(xpath = "//*[text()='Sign In']") public WebElement sıgnIn;
+    @FindBy(xpath = "//*[@id='username']") public WebElement username1;
+    @FindBy(xpath = "(//*[@class='icon-box text-center'])[3]") public  WebElement adress;
+    @FindBy(xpath = "(//*[text()='Add'])[1]") public WebElement addBilling;
+    @FindBy(xpath = "//*[@id='billing_first_name']") public WebElement billingFirstName;
+    @FindBy(xpath= "(//select)[1]") public WebElement billingCountrySelect;
+    @FindBy(xpath = "//*[@id='billing_address_1']") public WebElement billingStreetAdress;
+    @FindBy(xpath= "(//select)[2]") public WebElement billingProvice;
+    @FindBy(xpath = "//input[@id='billing_email']") public WebElement billingEmail;
+    @FindBy(xpath = "//*[@name='save_address']") public WebElement billingSaveAdress;
+    @FindBy(xpath = "//*[text()='Edit Your Billing Address']") public WebElement editAdress;
+    @FindBy(xpath= "//*[text()='Address changed successfully.']") public WebElement billingAllert;
+    @FindBy(xpath = "//*[@id='billing_city']") public  WebElement billingCity;
+    @FindBy(xpath = "//*[@id='billing_state']") public  WebElement billingState;
+    @FindBy(xpath = "//*[@id='billing_postcode']") public  WebElement billingPostcode;
+    @FindBy(xpath = "//*[@id='billing_phone']") public  WebElement billingPhone;
+    @FindBy(xpath = "//*[@id='billing_last_name']") public WebElement billingLastName;
+    @FindBy(xpath = "(//*[text()='Eklemek'])[2]") public WebElement addShipping;
+    @FindBy(xpath = "//*[@id='shipping_first_name']") public WebElement shippingFirstName;
+    @FindBy(xpath = "//select") public WebElement shippingCountry;
+    @FindBy(xpath = "//*[@id='shipping_address_1']") public WebElement shippingStreetAdress;
+    @FindBy(xpath = "//*[@id='select2-shipping_state-container']") public WebElement shippingProvince;
+    @FindBy(xpath = "//*[@name='save_address']") public WebElement shippingSaveAdress;
+    @FindBy(xpath = "//*[@class='alert']") public WebElement billingallertPhone;
+    @FindBy(xpath = "(//*[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]") public WebElement shippingEditAdress;
+    @FindBy(xpath = "//*[@id='shipping_last_name']") public WebElement shippingLastName1;
+    @FindBy(xpath = "//*[@id='shipping_city']") public WebElement shippingCity;
+    @FindBy(xpath = "//*[@id='shipping_state']") public WebElement shippingState;
+    @FindBy(xpath = "//*[@id='shipping_postcode']") public WebElement shippingPostcode;
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement shippingAllert;
+    @FindBy(xpath = "//*[@class='woocommerce-error']") public WebElement billingPhoneAlert;
+    @FindBy(xpath = "//*[text()='First name is a required field.']") public WebElement shippingFirstNameAllert;
+    @FindBy(xpath = "//*[text()='Last name is a required field.']") public WebElement shippingLastNameAllert;
+    @FindBy(xpath = "//*[text()='Street address is a required field.']") public WebElement shippingStreetAdressAllert;
+    @FindBy(xpath = "//*[text()='Postcode is a required field.']") public WebElement shippingPostcodeAllert;
+    @FindBy(xpath = "//*[text()='Suburb is a required field.']") public WebElement shippingSuburbAllert;
+    @FindBy(xpath = "//*[text()='City is a required field.']") public WebElement shippingCityAllert;
+    @FindBy(xpath = "//*[@class='woocommerce-error']") public WebElement billingPhoneAlertTC03;
+    @FindBy(xpath = "//*[@data-id='billing_first_name']") public WebElement billingFirstNameAlert;
+    @FindBy(xpath = "//*[@data-id='billing_last_name']") public WebElement billingLastNameAlert;
+    @FindBy(xpath = "//*[@data-id='billing_address_1']") public WebElement billingStreetAdresAlert;
+    @FindBy(xpath = "//*[@data-id='billing_city']") public WebElement billingTownCityAlert;
+    @FindBy(xpath = "//*[@data-id='billing_phone']") public WebElement billingPhoneNumberAlert;
+    @FindBy(xpath = "//*[@data-id='billing_postcode']") public WebElement billingPostCodeAlert;
+    @FindBy(xpath = "//*[@class=' alert alert-simple alert-icon alert-close-top alert-danger']") public WebElement billingEmailBoxAlert;
 
 
 
@@ -135,7 +181,6 @@ public class Page {
 
 
 
-//Sırma
 
 
 
@@ -235,7 +280,6 @@ public class Page {
 
 
 
-//Mesut
 
 
 
@@ -246,6 +290,7 @@ public class Page {
 
 
 
+    
 
 
 
@@ -294,7 +339,6 @@ public class Page {
 
 
 
-    //Mesut-US-19-20
 
 
 
@@ -345,58 +389,14 @@ public class Page {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
     //Rana
     @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registion;
