@@ -133,7 +133,7 @@ public class ReusableMethods {
         System.out.println(satirSutun.getText());
     }
 
-    //Click Method
+    //Click Method(laascript click)
     public static void click(WebElement element) {
         try {
             element.click();
