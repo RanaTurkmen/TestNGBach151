@@ -905,7 +905,7 @@ public class Page {
     public  WebElement hata7;
     @FindBy(xpath= "(//button)[1]")
     public  WebElement imleç;
-    @FindBy(xpath= "(//img)[13]")
+    @FindBy(xpath= "(//*[.='Women’s Summer Casual Dress'])[2]")
     public  WebElement ürün2;
     @FindBy(xpath= "(//button)[9]")
     public  WebElement yellow;
@@ -919,7 +919,7 @@ public class Page {
     public  WebElement viewCart;
     @FindBy(css= "[class='btn btn-dark btn-rounded btn-icon-left continue-shopping mb-4 mr-auto']")
     public  WebElement continueShopping;
-    @FindBy(xpath= "(//img)[6]")
+    @FindBy(xpath= "(//*[.='16 ” MacBook Pro'])[2]")
     public  WebElement macPro;
     @FindBy(xpath= "(//*[@href='https://allovercommerce.com/checkout-2/'])[3]")
     public  WebElement proceedToCheckout;
@@ -929,7 +929,7 @@ public class Page {
     public  WebElement next3;
     @FindBy(xpath= "(//*[@class='page-numbers'])[4]")
     public  WebElement next5;
-    @FindBy(xpath= "//*[.='ebby paten']")
+    @FindBy(xpath= "(//*[.='ebby paten'])[2]")
     public  WebElement pattern;
     @FindBy(xpath= "//*[@class='quantity-plus w-icon-plus']")
     public  WebElement artı;
@@ -1022,11 +1022,10 @@ public class Page {
     public  WebElement couponVerfyCouponAdı;
     @FindBy(xpath= "(//td)[3]")
     public  WebElement couponVerfyOran;
-
-
-
-
-
+    @FindBy(xpath= "//input[@id='quantity_64c8a932ab881']")
+    public  WebElement artıEksi;
+    @FindBy(xpath= "//*[@id='quantity_64c8ca12b06ce']")
+    public  WebElement xxxx;
 
 
 
