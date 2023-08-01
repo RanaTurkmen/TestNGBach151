@@ -47,12 +47,16 @@ public class TC04_VendorAttributesTesti extends ExtentReport {
         Assert.assertTrue(page.attributes.isDisplayed());
         page.attributes.click();
         extentTest.pass("Attributes menüsünün görünür olduğu doğrulandı ve üzerine tıklandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.attributes);
 
 //        Color seçeneğinin görünür olduğunu doğrula ve üzerine tıkla
         ReusableMethods.bekle(2);
         Assert.assertTrue(page.colorCheckbox.isDisplayed());
         page.colorCheckbox.click();
         extentTest.pass("Color menüsünün görünür olduğu doğrulandı ve üzerine tıklandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.colorCheckbox);
 
 //        Color alanında input alanına bir renk gir.
         page.colorDropDown.sendKeys("yellow", Keys.TAB);
@@ -74,6 +78,8 @@ public class TC04_VendorAttributesTesti extends ExtentReport {
 //        Size seçeneğinin görünür olduğunu doğrula
         Assert.assertTrue(page.sizeCheckbox.isDisplayed());
         extentTest.pass("Size seçeneğinin görünür olduğu doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.sizeCheckbox);
 
 //        Size alanında input alanına bir boyut gir.
         ReusableMethods.bekle(2);
@@ -88,6 +94,12 @@ public class TC04_VendorAttributesTesti extends ExtentReport {
         Assert.assertTrue(page.sizeAddNewButton.isDisplayed());
         Assert.assertTrue(page.sizeSelectNoneButton.isDisplayed());
         extentTest.pass("Select all, select none ve add new butonlarının görünür olduğu doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.sizeSelectNoneButton);
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.sizeAddNewButton);
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.sizeSelectNoneButton);
 
 //        Visible on the product page kutucuğuna tıkla
         page.sizeVisibleOnProductPageCheckbox.click();
