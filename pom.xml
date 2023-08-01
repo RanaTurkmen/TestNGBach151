@@ -28,6 +28,7 @@
         <!-- ILK ONCE SELENIUM-JAVA dependency'sini pom.xml dosyamiza mvnrepository.com adresinden alir koyariz -->
         <!-- Selenium-java suruculeri kontrol etmek icin gereken java siniflarini ve methodlarini icerir-->
         <!-- Tum dependency leri dependencies tag'i icine koymamiz gerekir-->
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -35,6 +36,7 @@
             <version>4.8.3</version>
         </dependency>
         <!-- Webdrivermanager; suruculeri yonetir ve proje icin gereken surucuyu otomatik olarak yukler -->
+
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -49,6 +51,7 @@
             <version>4.8.3</version>
         </dependency>
         <!-- Webdrivermanager; sürücüleri yönetir ve proje için gereken sürücüyü otomatik olarak yükler -->
+
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>

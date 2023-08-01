@@ -31,6 +31,7 @@ public class TC002 extends ExtentReport {
         //Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         extentTest.info("Anasayfaya gidildi.");
+
         //Sign In butonuna tıkla.
         Page page = new Page();
         page.signIn.click();
