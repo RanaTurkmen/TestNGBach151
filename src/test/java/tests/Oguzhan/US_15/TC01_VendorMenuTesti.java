@@ -18,6 +18,7 @@ public class TC01_VendorMenuTesti extends ExtentReport{
 //        Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         extentTest.info("Allover websitesine gidildi");
+        ReusableMethods.tumSayfaResmi("anasayfa");
 
 //        Sign in butonuna tıkla
         Page page = new Page();
@@ -38,10 +39,14 @@ public class TC01_VendorMenuTesti extends ExtentReport{
 //        "Store Manager" sayfasının açıldığını doğrula
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Store"));
         extentTest.pass("Store Manager sayfası açıldı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.storeManager);
 
 //        Sol Menüde "Products" bölümünün görünür olduğunu doğrula
         Assert.assertTrue(page.products.isDisplayed());
         extentTest.pass("Products bölümü görünürlüğü doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.products);
 
 //        "Products" bölümüne tıkla
         page.products.click();
@@ -58,26 +63,38 @@ public class TC01_VendorMenuTesti extends ExtentReport{
 //        Inventory menüsünün görülebilir olduğunu doğrula
         Assert.assertTrue(page.idventory.isDisplayed());
         extentTest.pass("Idventory menüsünün görünürlüğü doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.idventory);
 
 //        Shipping menüsünün görülebilir olduğunu doğrula
         Assert.assertTrue(page.shipping.isDisplayed());
         extentTest.pass("Shipping menüsünün görünürlüğü doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.shipping);
 
 //        Attributes menüsünün görülebilir olduğunu doğrula
         Assert.assertTrue(page.attributes.isDisplayed());
         extentTest.pass("Attributes menüsünün görünürlüğü doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.attributes);
 
 //        Link menüsünün görülebilir olduğunu doğrula
         Assert.assertTrue(page.linked.isDisplayed());
         extentTest.pass("Link menüsünün görünürlüğü doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.linked);
 
 //        SEO menüsünün görülebilir olduğunu doğrula
         Assert.assertTrue(page.seo.isDisplayed());
         extentTest.pass("SEO menüsünün görünürlüğü doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.seo);
 
 //        Advanced menüsünün görülebilir olduğunu doğrula
         Assert.assertTrue(page.advanced.isDisplayed());
         extentTest.pass("Advanced menüsünün görünürlüğü doğrulandı");
+        ReusableMethods.bekle(2);
+        ReusableMethods.webElementResmi(page.advanced);
 
         Driver.closeDriver();
         extentTest.info("Driver kapatıldı");

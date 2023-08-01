@@ -637,6 +637,18 @@ public class Page {
     @FindBy(xpath = "//*[@id='shipping_country']")
     public WebElement region;
 
+
+
+
+
+
+
+
+
+
+    //Oguzhan Aydin
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signIn;
     @FindBy(xpath = "//*[@href='signup']")
     public WebElement kayitliUsername;
     @FindBy(xpath = "//*[@id='password']")
@@ -790,6 +802,8 @@ public class Page {
     public WebElement shortDescriptonInput;
     @FindBy(xpath = "(//*[@class='button insert-media add_media'])[1]")
     public WebElement descriptionAddMedia;
+    @FindBy(xpath = "(//iframe)[2]")
+    public WebElement descriptionInput;
     @FindBy(xpath = "//*[@id='featured_img_display']")
     public WebElement addBigPicture;
     @FindBy(xpath = "(//*[*='Select'])[4]")
@@ -822,31 +836,17 @@ public class Page {
     public WebElement downloadableSelect;
     @FindBy(xpath = "//*[*='Published']")
     public WebElement publishedMessage;
+    @FindBy(xpath = "//*[@id='__wp-uploader-id-7']")
+    public WebElement addPicFromPc;
+    @FindBy(xpath = "(//*[@id='menu-item-upload'])[3]")
+    public WebElement uploadPic;
+    @FindBy(xpath = "//*[@id='__wp-uploader-id-10']")
+    public WebElement smallPicUpload;
+    @FindBy(xpath = "(//*[@id='menu-item-upload'])[4]")
+    public WebElement smallPicSelectFile;
+    @FindBy(xpath = "//*[@id='__wp-uploader-id-1']")
+    public WebElement descriptionSelectPic;
     //Oguzhan Aydin bitis
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Sırma  850
     @FindBy(xpath = "//*[@id='username']")
     public  WebElement emailAdres;
@@ -1047,8 +1047,8 @@ public class Page {
 
 
 
-    //Sırma
 
+    //Sırma
     //Mesut
 
 
