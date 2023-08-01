@@ -3,9 +3,11 @@ package utilities;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.Page;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -49,13 +51,7 @@ public class ReusableMethods {
         Driver.getDriver().switchTo().alert().sendKeys(text);
     }
 
-    //DropDown VisibleText
-    /*
-        Select select2 = new Select(gun);
-        select2.selectByVisibleText("7");
 
-        //ddmVisibleText(gun,"7"); --> Yukarıdaki kullanım yerine sadece method ile handle edebilirim
-     */
     public static void ddmVisibleText(WebElement ddm, String secenek) {
         Select select = new Select(ddm);
         select.selectByVisibleText(secenek);
@@ -105,6 +101,7 @@ public class ReusableMethods {
         wait.until(ExpectedConditions.alertIsPresent());
 
     }
+
     //Tüm Sayfa ScreenShot
     public static String tumSayfaResmi(String name) {
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
@@ -137,7 +134,7 @@ public class ReusableMethods {
         System.out.println(satirSutun.getText());
     }
 
-    //Click Method
+    //Click Method(laascript click)
     public static void click(WebElement element) {
         try {
             element.click();
@@ -177,17 +174,21 @@ public class ReusableMethods {
         js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
     }
 
-    //JS GetAttributeValue
+    /*JS GetAttributeValue
     public static void getValueByJS(String id, String attributeName) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+        String attribute_Value = (String) js.executeScript("return document.getElementById('id')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
+     */
+
 
     //pc'den dosya yükleme
 
     //FileUpload
-    public static void uploadFileFromPc(String dosyaYolu){
+    public static void uploadFileFromPc(String dosyaYolu) {
+
         StringSelection stringSelection = new StringSelection(dosyaYolu);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
         try {
@@ -209,6 +210,43 @@ public class ReusableMethods {
         robot.delay(1000);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+    }
+
+
+
+    public static void fakeMail(){
+
+        Page page = new Page();
+        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
+        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
+        Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
+        page.fakeMailCopy.click();
+
+        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
+        ReusableMethods.bekle(2);
+        page.emailClick.sendKeys(Keys.CONTROL, "v");
+        ReusableMethods.bekle(2);
+
+
+    }
+  
+    //TEKRARSIZ COUPON İSMİ OLUSTURMA METHODU
+
+    public static String couponName() {
+        String tarih = new SimpleDateFormat("hhmmssddMMyy").format(new Date());
+        String couponName = "Coupon" + tarih;
+        return couponName;
+    }
+
+
+
+
+    //JS GetAttributeValue
+    public static String getValueByJS(String id, String attributeName) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        return (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+
+
     }
 
 

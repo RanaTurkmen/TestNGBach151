@@ -32,6 +32,17 @@ public abstract class ExtentReport {
 
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
+
+       if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
+           String screenshotLocation = ReusableMethods.tumSayfaResmi(result.getName());
+           extentTest.fail(result.getName());
+           extentTest.addScreenCaptureFromPath(screenshotLocation);
+           extentTest.fail(result.getThrowable());
+       } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
+           extentTest.skip("Test Case is skipped: " + result.getName());
+       }
+        Driver.closeDriver();
+
         if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
             String screenshotLocation = ReusableMethods.tumSayfaResmi(result.getName());
             extentTest.fail(result.getName());
@@ -41,6 +52,7 @@ public abstract class ExtentReport {
             extentTest.skip("Test Case is skipped: " + result.getName());
         }
         //Driver.closeDriver();
+
     }
 
     @AfterTest(alwaysRun = true)

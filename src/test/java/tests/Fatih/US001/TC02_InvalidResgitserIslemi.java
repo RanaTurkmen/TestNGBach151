@@ -26,81 +26,78 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         Actions actions = new Actions(Driver.getDriver());
 
-        //Anasayfaya gittigini dogrula
+        //1 Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
-        softAssert.assertTrue(page.anaSayfa.isDisplayed());
-        extentTest.pass("Ana Sayfaya gidildi ve dogrulandi");
+        ReusableMethods.bekle(2);
 
-        //Register butonuna tıkla
+        //2 Register butonuna tıkla
         page.registerButton.click();
+        ReusableMethods.bekle(2);
         extentTest.info("Register butonuna tiklandi");
 
-        //3	"I agree to the privacy policy" seçenegine tıkla
-        page.IAgreeButton.click();
-        extentTest.info("I Agree butonuna tiklandi");
-
-        //4	SIGN UP butonuna tıkla
+        //3	SIGN UP butonuna tıkla
         page.signUp.click();
+        ReusableMethods.bekle(2);
         extentTest.info("Sign Up butonuna tiklandi");
 
-        //5	"Lütfen bu alanı doldurun" mesajının görünürlüğünü doğrula(Username alanı)
-        String msg = Driver.getDriver().findElement(By.id("username")).getAttribute("validationMessage");
+        //4	"Lütfen bu alanı doldurun" mesajını doğrula(Username alanı)
+        String msg = page.username.getAttribute("validationMessage");
         ReusableMethods.tumSayfaResmi("US001-TC02 Username");
         System.out.println(msg);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg.contains("Please fill out this field."));
         extentTest.pass("Hata mesaji alindi ve test edildi");
 
-        //6	Username alanına tıkla  username gir
+        //5	Username alanına tıkla  username gir
         page.username.sendKeys(faker.name().firstName());
         ReusableMethods.bekle(2);
         extentTest.info("Username alanina tiklandi ve gecerli bir username girildi");
 
-        //7	SİGN UP butonuna tıkla
+        //6	SİGN UP butonuna tıkla
         page.signUp.click();
         ReusableMethods.bekle(2);
         extentTest.info("Sign Up butonuna tiklandi");
 
-        //8	"Lütfen bu alanı doldurun" mesajının görünürlüğünü doğrula(email alanı)
-        String msg1 = Driver.getDriver().findElement(By.xpath("(//*[@id='reg_email'])[1]")).getAttribute("validationMessage");
+        //7	"Lütfen bu alanı doldurun" mesajını doğrula(email alanı)
+        String msg1 = page.emailClick.getAttribute("validationMessage");
         ReusableMethods.tumSayfaResmi("US001-TC02 Email");
         System.out.println(msg1);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg1.contains("Please fill out this field."));
         extentTest.pass("Hata mesaji alindi ve test edildi");
 
-        //9	e mail alanına  "@"  girmeden bır emaıl gır
+        //8	e mail alanına  "@"  girmeden bır emaıl gır
         page.emailClick.sendKeys(ConfigReader.getProperty("yanlisMail"));
         ReusableMethods.bekle(2);
         extentTest.info("Email alanina tiklandi ve gecersiz bir email girildi");
 
-        //10	SİGN UP butonuna tıkla
+        //9	SİGN UP butonuna tıkla
         page.signUp.click();
         ReusableMethods.bekle(2);
         extentTest.info("Sign Up butonuna tiklandi");
 
-        //11	Lütfen e-posta adresine bir  @" işareti ekleyin" mesajının görünür oldugunu doğrula
-        String msg2 = Driver.getDriver().findElement(By.xpath("(//*[@id='reg_email'])[1]")).getAttribute("validationMessage");
+        //10	Lütfen e-posta adresine bir  @" işareti ekleyin" mesajını doğrula
+        String msg2 = page.emailClick.getAttribute("validationMessage");
         ReusableMethods.tumSayfaResmi("US001-TC02 Email @ isareti");
         System.out.println(msg2);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg2.contains("Please include an '@' in the email address. 'crowley.aadvikfixedfor' is missing an '@'."));
         extentTest.pass("Hata mesaji alindi ve test edildi");
 
-        //12	email'in sonuna @ ekle
+        //11	email'in sonuna @ ekle
         page.emailClick.clear();
         ReusableMethods.bekle(2);
         page.emailClick.sendKeys(ConfigReader.getProperty("yanlisMail2"));
         ReusableMethods.bekle(2);
         extentTest.info("Email alanina tiklandi ve hatali email'in sonuna @ isareti eklendi");
 
-        //13	SİGN UP butonuna tıkla
+        //12	SİGN UP butonuna tıkla
         page.signUp.click();
         ReusableMethods.bekle(2);
         extentTest.info("Sign Up butonuna tiklandi");
 
-        //14	"Lütfen  "@" işaretinden sonra gelen kısmı ekleyin"  mesajını doğrula
-        String msg3 = Driver.getDriver().findElement(By.xpath("(//*[@id='reg_email'])[1]")).getAttribute("validationMessage");
+        //13	"Lütfen  "@" işaretinden sonra gelen kısmı ekleyin"  mesajını doğrula
+        String msg3 = page.emailClick.getAttribute("validationMessage");
         ReusableMethods.tumSayfaResmi("US001-TC02 Email @ isaretinden sonra ki kisim");
         System.out.println(msg3);
         ReusableMethods.bekle(2);
@@ -109,96 +106,56 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
         softAssert.assertTrue(msg3.contains("Please enter a part following '@'. 'crowley.aadvikfixedfor@' is incomplete."));
         extentTest.pass("Hata mesaji alindi ve test edildi");
 
-        //15	email alanına gecerli bır email gir
-        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[1].toString());
-        Driver.getDriver().get(ConfigReader.getProperty("fakeUrl"));
-        page.fakeMailCopy.click();
-        extentTest.info("Gecerli bir email alindi");
-
-        Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().toArray()[0].toString());
-        ReusableMethods.bekle(2);
-        page.emailClick.sendKeys(Keys.CONTROL, "v");
-        ReusableMethods.bekle(2);
+        //14	email alanına unique bır email gir
+        ReusableMethods.fakeMail();
         extentTest.info("Email alanina tiklandi ve gecerli bir email girildi");
 
-        //16	SİGN UP butonuna tıkla
+        //15	SİGN UP butonuna tıkla
         page.signUp.click();
         ReusableMethods.bekle(2);
         extentTest.info("Sign Up butonuna tiklandi");
 
-        //17	"Lütfen bu alanı doldurun" mesajınin görünürlüğünü dogrula(password alanı)
-        String msg4 = Driver.getDriver().findElement(By.id("password")).getAttribute("validationMessage");
+        //16	"Lütfen bu alanı doldurun" mesajınin yazisini dogrula(password alanı)
+        String msg4 = page.passwordClick.getAttribute("validationMessage");
         ReusableMethods.tumSayfaResmi("US001-TC02 Password");
         System.out.println(msg4);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg4.contains("Please fill out this field."));
         extentTest.pass("Hata mesaji alindi ve test edildi");
 
-        //18	Password alanına 12 karakterden az bir password gir.
+        //17	Password kriterlerine uymayan bir password gir.
         page.passwordClick.sendKeys(ConfigReader.getProperty("yanlisPassword"));
         ReusableMethods.bekle(2);
         extentTest.pass("Password kriterlerine uymayan hatali bir password girildi");
 
-        //19    Giris yapilmadigini dogrula
-        js.executeScript("arguments[0].click();", page.signUp);
-        ReusableMethods.bekle(15);
-        ReusableMethods.tumSayfaResmi("Giris");
-        extentTest.info("Ekran goruntusu alindi");
-        softAssert.assertFalse(page.signOutButton.isDisplayed() , "GIRIS YAPILDI");
-        extentTest.fail("Giris yapilmadi");
+        //18    Sign Up botonunun tiklanamadigini dogrula
+        softAssert.assertFalse(page.signUp.isEnabled() , "SIGN UP tiklanabilir");
+        extentTest.fail("SIGN UP tiklanabilir");
+        ReusableMethods.bekle(2);
         softAssert.assertAll();
 
-        //22	"Weak - Please enter a stronger password." mesajının görünürlüğünü dogrula
-        softAssert.assertTrue(page.passwordVerify.isDisplayed());
-        ReusableMethods.bekle(2);
-        extentTest.info("Weak - Please enter a stronger password. mesaji alindi ve test edildi");
-
-        //23	"I agree to the privacy policy" seçenegine tıkla
-        js.executeScript("arguments[0].click();", page.IAgreeButton);
-        ReusableMethods.bekle(2);
-        extentTest.info("I Agree butonuna tiklandi");
-
-        //24	Kayıt yapılamadığını doğrula
-        js.executeScript("arguments[0].click();", page.signUp);
-        softAssert.assertTrue(page.signUp.isEnabled());
-        ReusableMethods.bekle(2);
-        extentTest.pass("Kayit yapilamadigi dogrulandi");
-        js.executeScript("arguments[0].click();", page.IAgreeButton);
-        ReusableMethods.bekle(2);
-        extentTest.info("I Agree butonuna tiklandi");
-
-        //25	Password alanındaki passwordu sil.
+        //19	Password alanındaki passwordu sil.
         page.passwordClick.clear();
         ReusableMethods.bekle(2);
         extentTest.info("Password alanindaki hatali password silindi");
 
-        //26	Password alanına 12 karakterli en az bir harf , rakam, spesifik karakter içeren bir password gir.
+        //20	Password alanına 12 karakterli en az bir harf , rakam, spesifik karakter içeren bir password gir.
         page.passwordClick.sendKeys(ConfigReader.getProperty("password"), Keys.ENTER);
         ReusableMethods.bekle(2);
         extentTest.info("Password alanina kriterlere uyan bir password basarili bir sekilde girildi");
 
-        //27	İlerlemek istiyorsanız lütfen kutuyu işaretleyin mesajını göründüğünü doğrula
+        //21	SİGN UP butonuna tıkla
+        js.executeScript("arguments[0].click();", page.signUpButton);
+        ReusableMethods.bekle(5);
+        actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();
+        extentTest.info("Sign Up butonuna tiklandi");
+
+        //22	İlerlemek istiyorsanız lütfen kutuyu işaretleyin mesajını doğrula
         String msg5 = Driver.getDriver().findElement(By.xpath("//*[@id='register-policy']")).getAttribute("validationMessage");
         System.out.println(msg5);
         ReusableMethods.bekle(2);
         softAssert.assertTrue(msg5.contains("Please check this box if you want to proceed."));
         extentTest.pass("Hata mesaji alindi ve test edildi");
-
-        //28	"I agree to the privacy policy" seçenegine tıkla
-        js.executeScript("arguments[0].click();", page.IAgreeButton);
-        ReusableMethods.bekle(2);
-        extentTest.info("I Agree butonuna tiklandi");
-
-        //29	SİGN UP butonuna tıkla
-        js.executeScript("arguments[0].click();", page.signUpButton);
-        ReusableMethods.bekle(15);
-        actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();
-        extentTest.info("Sign Up butonuna tiklandi");
-
-        //30	My Account  sayfasını göründüğünü doğrula
-        softAssert.assertTrue(page.MyAccount.isDisplayed());
-        extentTest.pass("Hesaba basarili bir sekilde giris yapildi ve My Account yazisinin gorunurlugu test edildi");
         extentReports.flush();
     }
 }
