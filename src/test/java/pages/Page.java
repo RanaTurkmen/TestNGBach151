@@ -9,7 +9,6 @@ import utilities.Driver;
 import java.util.List;
 
 public class Page {
-public class Page {
 
     public Page() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -1051,7 +1050,67 @@ public class Page {
 
     //Mesut
 
+    @FindBy(xpath = "//*[@class='login inline-type']")
+    public WebElement signInButtonHP;
+    @FindBy(id="username")
+    public WebElement emailBox;
+    @FindBy(xpath = "(//li[@class='product-wrap'])[1]")
+    public WebElement pencil6;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement verifyingOfAddingProductToCart;
+    @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]")
+    public WebElement cartLogo;
+    @FindBy(xpath = "//button[@title='Plus']")
+    public WebElement plusIcon;
+    @FindBy(xpath = "//button[@name='update_cart']")
+    public WebElement updateCart;
+    @FindBy(xpath = "(//span[@class='cart-count'])[1]")
+    public WebElement cartQuantity;
+    @FindBy(xpath = "//button[@class='quantity-minus w-icon-minus']")
+    public WebElement minusIcon;
+    @FindBy(xpath = "//*[@name='coupon_code']")
+    public WebElement couponCodeTextArea;
+    @FindBy(xpath = "//*[.='Apply coupon']")
+    public WebElement applyCoupon;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement verifyCoupon;
+    @FindBy(xpath ="//a[@class='woocommerce-remove-coupon']")
+    public WebElement removeCoupon;
 
+
+    @FindBy(xpath = "//a[@class='showcoupon']")
+    public WebElement enterYourCodeButton;
+
+    @FindBy(xpath = "//*[@id='billing_first_name']")
+    public WebElement firstNameTextArea;
+    @FindBy(xpath = "//select[@id='billing_country']")
+    public WebElement countryRegionDdm;
+    @FindBy(xpath = "//*[@id='billing_address_1']")
+    public WebElement streetAdress;
+    @FindBy(xpath = "//*[@id='select2-billing_state-container']")
+    public WebElement stateDdm;
+
+
+    @FindBy(xpath = "//*[.='Thank you. Your order has been received.']")
+    public WebElement verifyOrder;
+    @FindBy(xpath = "(//*[@class='btn btn-search'])[1]")
+    public WebElement searchButton;
+    @FindBy(xpath = "(//h3)[1]")
+    public WebElement billingDetailsText;
+    @FindBy(xpath = "//ul[@role='alert']")
+    public WebElement usedCouponVerifying;
+    @FindBy(xpath = "(//span[@class='woocommerce-Price-amount amount'])[6]")
+    public WebElement totalAmount;
+    @FindBy(xpath = "//*[.='My Orders']")
+    public WebElement myOrdersButton;
+    @FindBy(xpath ="//*[.='Checkout']")
+    public WebElement checoutButton1;
+
+    @FindBy(xpath ="//*[@class='woocommerce-button btn btn-default btn-rounded btn-outline btn-sm btn-block view']")
+    public WebElement viewButton;
+
+    @FindBy(xpath = "(//a[@class='woocommerce-LoopProduct-link woocommerce-loop-product__link'])[7]")
+    public WebElement macbookAir;
 
 
 
