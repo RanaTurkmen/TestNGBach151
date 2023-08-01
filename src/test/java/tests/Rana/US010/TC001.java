@@ -18,6 +18,7 @@ public class TC001 extends ExtentReport {
     strong
      */
 
+
     @BeforeMethod
     public void setUp() {
         extentTest=extentReports.createTest("Vendor Kaydı US010 TC01","Password seviyeleri görülebilmeli (Vendor Kaydı için)");
