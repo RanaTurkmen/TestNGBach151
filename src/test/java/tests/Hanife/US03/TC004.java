@@ -28,8 +28,8 @@ public class TC004 extends ExtentReport {
         extentTest.info("Sign In butonuna tıklandı");
 
         //Username ve password girip giriş yap
-        page.username.click();
-        page.username.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
+        page.username1.click();
+        page.username1.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
         extentTest.info("Username ve password girilip, giriş yapıldı");
 
 

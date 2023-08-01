@@ -29,8 +29,8 @@ public class TC002 extends ExtentReport {
         extentTest.info("Sign In butonuna tıklandı");
 
         //Username ve password girip giriş yap
-        page.username.click();
-        page.username.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
+        page.username1.click();
+        page.username1.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
         extentTest.info("Username ve password girilip, giriş yapıldı");
 
 
@@ -54,7 +54,7 @@ public class TC002 extends ExtentReport {
 
         //Shipping Adress bölümünde girilmesi zorunlu alanları boş bırak
         page.shippingFirstName.clear();
-        page.shippingLastName.clear();
+        page.shippingLastName1.clear();
         page.shippingState.clear();
         page.shippingStreetAdress.clear();
         page.shippingCity.clear();

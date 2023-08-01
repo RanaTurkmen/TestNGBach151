@@ -32,9 +32,9 @@ public class TC002 extends ExtentReport {
 
         //Username ve password girip giriş yap
 
-        page.username.click();
+        page.username1.click();
 
-        page.username.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
+        page.username1.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
         extentTest.info("Username ve password girilip, giriş yapıldı");
 
 

@@ -29,8 +29,8 @@ public class TC003 extends ExtentReport {
         extentTest.info("Sign In butonuna tıklandı");
 
         //Username ve password girip giriş yap
-        page.username.click();
-        page.username.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
+        page.username1.click();
+        page.username1.sendKeys("Bahri"+ Keys.TAB+"Bahri1977."+Keys.ENTER);
         extentTest.info("Username ve password girilip, giriş yapıldı");
 
         ReusableMethods.scrollEnd();
@@ -51,7 +51,7 @@ public class TC003 extends ExtentReport {
         extentTest.info("Shipping adress altında Edit butonuna tıklandı ");
 
         page.shippingFirstName.clear();
-        page.shippingLastName.clear();
+        page.shippingLastName1.clear();
         page.shippingState.clear();
         page.shippingStreetAdress.clear();
         page.shippingCity.clear();
@@ -77,7 +77,7 @@ public class TC003 extends ExtentReport {
 
         ReusableMethods.bekle(2);
 
-        page.shippingLastName.clear();
+        page.shippingLastName1.clear();
 
         //Teslimat Adresini kaydetmek için "Save Address" düğmesine tıkla
         ReusableMethods.scroll(page.shippingSaveAdress);
