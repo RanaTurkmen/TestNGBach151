@@ -26,12 +26,13 @@ public class TC002 extends ExtentReport {
      */
     @Test
     public void test01() {
-        extentTest = extentReports.createTest("Extent Report", "Allover test raporu");
+        extentTest = extentReports.createTest("Vendor Kaydı US009 TC02", "Vendor (Satıcı) olarak, siteye kayıt yapılabilmeli.(Vendor Registration)");
 
         //Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         extentTest.info("Anasayfaya gidildi.");
-
+        ReusableMethods.tumSayfaResmi("Anasayfa resmi");
+        extentTest.info("Tum sayfa resmi alındı.");
         //Sign In butonuna tıkla.
         Page page = new Page();
         page.signIn.click();
@@ -270,7 +271,7 @@ public class TC002 extends ExtentReport {
         //"Registration Successfully Completed. "Yazısın çıktığını doğrula.
         Assert.assertEquals(ConfigReader.getProperty("registionSuccess"), page.successlogin.getText());
         extentTest.info("Registration Successfully Completed. Yazısın çıktığı doğrulandı.");
-       ReusableMethods.bekle(3);
+        ReusableMethods.bekle(3);
         //Yeni açılan sayfada "Welcome to Allover Commerce!" yazısını görüdüğünü doğrula.
         Assert.assertEquals(ConfigReader.getProperty("welcome"), page.welcome.getText());
         extentTest.pass("Yeni açılan sayfada Welcome to Allover Commerce! yazısını görüdüğünü doğrula");

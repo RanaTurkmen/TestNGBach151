@@ -20,10 +20,13 @@ public class TC001 extends ExtentReport {
 
     @BeforeMethod
     public void setUp() {
-        extentTest=extentReports.createTest("Extent Report","Allover test raporu");
+        extentTest=extentReports.createTest("Vendor Kaydı US010 TC01","Password seviyeleri görülebilmeli (Vendor Kaydı için)");
+
         //Anasayfaya git .
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         extentTest.info("Anasayfaya gidildi.");
+        ReusableMethods.tumSayfaResmi("Anasayfa resmi");
+        extentTest.info("Tum sayfa resmi alındı.");
 
         //Register butonuna tikla.
         Page page = new Page();
@@ -106,6 +109,7 @@ public class TC001 extends ExtentReport {
         extentTest.pass("Strong mesajının göründüğü doğrulandı.");
         ReusableMethods.webElementResmi(page.verifyPassword);
         extentTest.info("Webelement resmi alındı.(Strong)");
+
         //Passwordu alanındaki passwordu sil.
         page.password.clear();
         extentTest.info("Passwordu alanındaki password silindi.");
@@ -119,5 +123,6 @@ public class TC001 extends ExtentReport {
         extentTest.pass("Strong mesajının göründüğü doğrulandı.");
         ReusableMethods.webElementResmi(page.verifyPassword);
         extentTest.info("Webelement resmi alındı.(Strong)");
+
     }
 }
