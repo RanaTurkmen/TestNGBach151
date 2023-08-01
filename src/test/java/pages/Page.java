@@ -27,7 +27,7 @@ public class Page {
     public WebElement passwordClick;
     @FindBy(xpath = "//*[@id='register-policy']")
     public WebElement IAgreeButton;
-    @FindBy(xpath = "(//*[@type='submit'])[2]")
+    @FindBy(xpath = "//a[@href='signup']")
     public WebElement signUp;
     @FindBy(xpath = "(//*[@class='w-icon-account'])[1]")
     public WebElement signOutButton;

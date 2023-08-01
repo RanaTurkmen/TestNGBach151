@@ -26,12 +26,13 @@ public class TC001 extends ExtentReport {
      */
     @Test
     public void test01() {
-        extentTest = extentReports.createTest("Extent Report", "Allover test raporu");
+        extentTest = extentReports.createTest("Vendor Kaydı US009 TC01", "Vendor (Satıcı) olarak, siteye kayıt yapılabilmeli.(Vendor Registration)");
 
         //Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
         extentTest.info("Anasayfaya gidildi.");
-
+        ReusableMethods.tumSayfaResmi("Anasayfa resmi");
+        extentTest.info("Tum sayfa resmi alındı.");
         //Register butonuna tikla
         Page page = new Page();
         page.registion.click();
