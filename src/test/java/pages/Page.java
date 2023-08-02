@@ -34,8 +34,8 @@ public class Page {
     public WebElement cikisYap;
     @FindBy(xpath = "//*[@value='Sign Up']")
     public WebElement signUpButton;
-    @FindBy(xpath = "(//h2)")
-    public WebElement MyAccount;
+    @FindBy(xpath = "//*[@class='woocommerce-password-hint']")
+    public WebElement passwordUyariVerify;
 
 
 
