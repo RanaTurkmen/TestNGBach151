@@ -4,10 +4,8 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.Page;
@@ -124,33 +122,44 @@ public class TC02_InvalidResgitserIslemi extends ExtentReport {
         extentTest.pass("Hata mesaji alindi ve test edildi");
 
         //17	Password kriterlerine uymayan bir password gir.
-        page.passwordClick.sendKeys(ConfigReader.getProperty("yanlisPassword"));
+        page.passwordClick.sendKeys(ConfigReader.getProperty("gecersizPassword"));
         ReusableMethods.bekle(2);
         extentTest.pass("Password kriterlerine uymayan hatali bir password girildi");
 
-        //18    Sign Up botonunun tiklanamadigini dogrula
+        //18    "Please enter a stronger password."mesajın görünürlüğünü dogrula.
+        softAssert.assertTrue(page.passwordVerify.isDisplayed() , "Gecersiz password'de mesaj gorulmedi");
+        extentTest.fail("Please enter a stronger password mesaji gorulmedi");
+        softAssert.assertAll();
+
+        //19    Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower
+        // case letters, numbers, and symbols like ! " ? $ % ^ & ). Mesajın gorundugunu dogrula
+        softAssert.assertTrue(page.passwordUyariVerify.getText().
+                contains("The password should be at least twelve characters long. To make it stronger, use upper and lower" +
+                "case letters, numbers, and symbols like !  ? $ % ^ & )"));
+        extentTest.fail("Uyari mesaji alindi ve gorunurlugu dogrulandi");
+
+        //20    Sign Up botonunun tiklanamadigini dogrula
         softAssert.assertFalse(page.signUp.isEnabled() , "SIGN UP tiklanabilir");
         extentTest.fail("SIGN UP tiklanabilir");
         ReusableMethods.bekle(2);
-        softAssert.assertAll();
 
-        //19	Password alanındaki passwordu sil.
+        //21	Password alanındaki passwordu sil.
         page.passwordClick.clear();
         ReusableMethods.bekle(2);
-        extentTest.info("Password alanindaki hatali password silindi");
+        extentTest.info("Password alanindaki gecersiz password silindi");
 
-        //20	Password alanına 12 karakterli en az bir harf , rakam, spesifik karakter içeren bir password gir.
+        //22	Password alanına 12 karakterli en az bir harf , rakam, spesifik karakter içeren bir password gir.
         page.passwordClick.sendKeys(ConfigReader.getProperty("password"), Keys.ENTER);
         ReusableMethods.bekle(2);
         extentTest.info("Password alanina kriterlere uyan bir password basarili bir sekilde girildi");
 
-        //21	SİGN UP butonuna tıkla
+        //23	SİGN UP butonuna tıkla
         js.executeScript("arguments[0].click();", page.signUpButton);
         ReusableMethods.bekle(5);
         actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();
         extentTest.info("Sign Up butonuna tiklandi");
 
-        //22	İlerlemek istiyorsanız lütfen kutuyu işaretleyin mesajını doğrula
+        //24	İlerlemek istiyorsanız lütfen kutuyu işaretleyin mesajını doğrula
         String msg5 = Driver.getDriver().findElement(By.xpath("//*[@id='register-policy']")).getAttribute("validationMessage");
         System.out.println(msg5);
         ReusableMethods.bekle(2);

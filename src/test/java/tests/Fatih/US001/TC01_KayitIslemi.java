@@ -25,7 +25,7 @@ public class TC01_KayitIslemi extends ExtentReport {
         //Anasayfaya gittigini dogrula
         Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         softAssert.assertTrue(page.anaSayfa.isDisplayed());
-        extentTest.pass("Ana Sayfaya gidildi ve dogrulandi");
+        extentTest.info("Ana Sayfaya gidildi ve dogrulandi");
 
         //Register butonuna tıkla
         page.registerButton.click();
