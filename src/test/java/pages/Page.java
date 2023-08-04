@@ -381,10 +381,10 @@ public class Page {
     public WebElement quickviewClick;
     @FindBy(xpath = "//*[@class='posted_in']")
     public WebElement urunOzellikDogrulaCase;
-    @FindBy(xpath = "//*[@name='add-to-cart']")
-    public WebElement addToCartButton;
-    @FindBy(xpath = "//*[@class='btn btn-sm btn-rounded']")
-    public WebElement viewCartButton;
+    //@FindBy(xpath = "//*[@name='add-to-cart']")
+    //public WebElement addToCartButton;
+    //@FindBy(xpath = "//*[@class='btn btn-sm btn-rounded']")
+    //public WebElement viewCartButton;
     @FindBy(xpath = "(//*[.='Shopping Cart'])[2]")
     public WebElement shoppingCartIsDisplay;
     @FindBy(xpath = "(//*[.='Iphone Case'])[4]")
@@ -658,8 +658,8 @@ public class Page {
     public WebElement vendor1;
     // @FindBy(xpath = "//a[@class='register inline-type']")
     // public WebElement registion;
-    @FindBy(xpath = "//span[.='Sign In']")
-    public WebElement signIn;
+    //@FindBy(xpath = "//span[.='Sign In']")
+    //public WebElement signIn;
     //@FindBy(xpath = "//a[.='Sign Up']")
     //public WebElement BecomeVendor;
     //@FindBy(xpath = "(//h2)[1]")
@@ -849,8 +849,8 @@ public class Page {
     //Sırma  850
     @FindBy(xpath = "//*[@id='username']")
     public  WebElement emailAdres;
-    @FindBy(xpath = "//*[@id='menu-item-1079']")
-    public  WebElement myAccount;
+    //@FindBy(xpath = "//*[@id='menu-item-1079']")
+    //public  WebElement myAccount;
     @FindBy(xpath = "(//*[.='Orders'])[2]")
     public  WebElement orders;
     @FindBy(css = "[class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']")
@@ -978,8 +978,8 @@ public class Page {
     @FindBy(xpath= "(//*[.='ebby paten'])[2]")
     public  WebElement popupBabyPattern;
     //US18 LOCATE
-    @FindBy(xpath= "//*[.='Sign Out']")
-    public  WebElement signOut;
+    //@FindBy(xpath= "//*[.='Sign Out']")
+    //public  WebElement signOut;
     @FindBy(xpath= "//*[.='Store Manager']")
     public  WebElement storeManager1;
     @FindBy(xpath= "//*[@class='wcfmfa fa-gift']")
@@ -1262,10 +1262,10 @@ public class Page {
     public WebElement viewCartButtonTikla;
     @FindBy(xpath = "(//*[.='Add to cart'])[1]")
     public WebElement pc2SepeteEkle;
-    @FindBy(xpath = "//*[@class='btn btn-sm btn-dark btn-rounded']")
-    public WebElement checkoutButton;
-    @FindBy(xpath = "//*[.='Billing details']")
-    public WebElement billingDetails;
+    //@FindBy(xpath = "//*[@class='btn btn-sm btn-dark btn-rounded']")
+    //public WebElement checkoutButton;
+    //@FindBy(xpath = "//*[.='Billing details']")
+    //public WebElement billingDetails;
     @FindBy(xpath = "(//*[.='MacBook Air'])[4]")
     public WebElement mackbookTikla;
     @FindBy(xpath = "(//*[@type='submit'])[2]")
@@ -1278,16 +1278,16 @@ public class Page {
     public WebElement viewCartButton2;
     @FindBy(xpath = "//*[@class='button checkout wc-forward']")
     public WebElement checkoutButton2;
-    @FindBy(xpath = "(//*[@type='text'])[3]")
-    public WebElement firstName;
-    @FindBy(xpath = "(//*[@type='submit'])[4]")
-    public WebElement placeOrder;
-    @FindBy(xpath = "//*[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
-    public WebElement thankYou;
+    //@FindBy(xpath = "(//*[@type='text'])[3]")
+    //public WebElement firstName;
+    //@FindBy(xpath = "(//*[@type='submit'])[4]")
+    //public WebElement placeOrder;
+    //@FindBy(xpath = "//*[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
+    //public WebElement thankYou;
     @FindBy(xpath = "(//*[@type='submit'])[2]")
     public WebElement addToCartMens;
-    @FindBy(xpath = "//*[@class='checkout-button button alt wc-forward']")
-    public WebElement proceedToCheckout;
+    //@FindBy(xpath = "//*[@class='checkout-button button alt wc-forward']")
+    //public WebElement proceedToCheckout;
     @FindBy(xpath = "(//*[.='Checkout'])[2]")
     public WebElement checkoutUzerineTikla;
     @FindBy(xpath = "//*[text()='has been added to cart']")
@@ -1307,8 +1307,8 @@ public class Page {
     public WebElement eMailBox;
     @FindBy(xpath = "//input[@id='password']")
     public WebElement passwordBox;
-    @FindBy(xpath = "//button[@value='Sign In']")
-    public WebElement signInButton;
+    //@FindBy(xpath = "//button[@value='Sign In']")
+    //public WebElement signInButton;
     @FindBy(xpath = "(//p[@class='submit-status'])[1]")
     public WebElement alertTextWrongUser;
     @FindBy(xpath = "//p[@class='submit-status loading']")
@@ -1335,8 +1335,8 @@ public class Page {
     public WebElement followingsText;
     @FindBy(xpath = "//*[.='Logout']")
     public WebElement logoutText;
-    @FindBy(xpath = "//span[text()='Sign Out']")
-    public WebElement signOutButton;
+    //@FindBy(xpath = "//span[text()='Sign Out']")
+    //public WebElement signOutButton;
     @FindBy(xpath = "//a[text()='Addresses']")
     public WebElement adressesText;
     @FindBy(xpath = "//h4[@class='icon-box-title text-normal']")
@@ -1345,10 +1345,10 @@ public class Page {
     public WebElement addText;
     @FindBy(xpath = "//h3[text()='Billing address']")
     public WebElement billingAddressPage;
-    @FindBy(xpath = "//input[@id='billing_first_name']")
-    public WebElement billingFirstName;
-    @FindBy(xpath = "//input[@id='billing_last_name']")
-    public WebElement billingLastName;
+    //@FindBy(xpath = "//input[@id='billing_first_name']")
+    //public WebElement billingFirstName;
+    //@FindBy(xpath = "//input[@id='billing_last_name']")
+    //public WebElement billingLastName;
     @FindBy(xpath = "//select[@id='billing_country']")
     public WebElement countryDdm;
     @FindBy(xpath = "//input[@id='billing_address_1']")
@@ -1373,14 +1373,14 @@ public class Page {
     public WebElement billingName;
     @FindBy(xpath = "(//table/tbody/tr[3]/td)[1]")
     public WebElement billingAddress;
-    @FindBy(xpath = "//table/tbody/tr[4]/td")
-    public WebElement billingCity;
+    //@FindBy(xpath = "//table/tbody/tr[4]/td")
+    //public WebElement billingCity;
     @FindBy(xpath = "//table/tbody/tr[5]/td")
     public WebElement billingCountry;
     @FindBy(xpath = "//table/tbody/tr[6]/td")
     public WebElement billingPostCode;
-    @FindBy(xpath = "//table/tbody/tr[7]/td")
-    public WebElement billingPhone;
+    //@FindBy(xpath = "//table/tbody/tr[7]/td")
+    //public WebElement billingPhone;
     @FindBy(xpath = "(//div/nav/ul/li)[position()>=1 and position()<=10]")
     public List<WebElement> dashboardMenuList;
 
