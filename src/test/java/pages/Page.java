@@ -849,8 +849,8 @@ public class Page {
     //Sırma  850
     @FindBy(xpath = "//*[@id='username']")
     public  WebElement emailAdres;
-    //@FindBy(xpath = "//*[@id='menu-item-1079']")
-    //public  WebElement myAccount;
+    @FindBy(xpath = "//*[@id='menu-item-1079']")
+    public  WebElement myAccount1;
     @FindBy(xpath = "(//*[.='Orders'])[2]")
     public  WebElement orders;
     @FindBy(css = "[class='woocommerce-Button button btn btn-link btn-underline btn-icon-right']")
@@ -881,13 +881,11 @@ public class Page {
     public  WebElement bag2;
     @FindBy(xpath= "(//*[.='View cart'])[2]")
     public  WebElement bagViewCart;
-    @FindBy(xpath= "/(//*[@class='cart-count'])[1]")
-    public  WebElement sepetSayısı;
     @FindBy(xpath= "(//*[@class='w-icon-cart'])[1]")
     public  WebElement sepet;
     @FindBy(xpath= "//*[.='Checkout']")
     public  WebElement checkoutButton;
-    @FindBy(xpath= "//*[@id='place_order']")
+    @FindBy(xpath= "//*[text()='Place order']")
     public  WebElement placOrder;
     @FindBy(xpath= "(//li)[7]")
     public  WebElement hata1;
@@ -929,7 +927,7 @@ public class Page {
     public  WebElement next3;
     @FindBy(xpath= "(//*[@class='page-numbers'])[4]")
     public  WebElement next5;
-    @FindBy(xpath= "(//*[.='ebby paten'])[2]")
+    @FindBy(xpath= "(//*[.='ebby paten'])[4]")
     public  WebElement pattern;
     @FindBy(xpath= "//*[@class='quantity-plus w-icon-plus']")
     public  WebElement artı;
@@ -939,11 +937,6 @@ public class Page {
     public  WebElement ürünAdedi;
     @FindBy(xpath= "//*[@class='stock in-stock']")
     public  WebElement stokAdedi;
-    @FindBy(xpath= "//*[@class='woocommerce-product-details__short-description']")
-    public  WebElement uyarıMesajı;
-    @FindBy(xpath= "(//*[@class='quantity'])[1]")
-    public  WebElement ürünSayısıSepet;
-    @FindBy(xpath= "(//button)[3]")
     public  WebElement placeOrder;
     @FindBy(xpath= "//*[@data-id='billing_postcode']")
     public  WebElement hata8;
@@ -957,8 +950,6 @@ public class Page {
     public  WebElement payAddTheDoor;
     @FindBy(xpath= "//*[.='Thank you. Your order has been received.']")
     public  WebElement thankYou;
-    @FindBy(xpath= "//*[@href='https://allovercommerce.com/my-account-2/view-order/31280/']")
-    public  WebElement siparisKodu;
     @FindBy(xpath= "(//*[.='View'])[1]")
     public  WebElement siparisKodu2;
     @FindBy(xpath= "(//p)[4]")
@@ -977,9 +968,8 @@ public class Page {
     public  WebElement sepetUstSayı;
     @FindBy(xpath= "(//*[.='ebby paten'])[2]")
     public  WebElement popupBabyPattern;
-    //US18 LOCATE
-    //@FindBy(xpath= "//*[.='Sign Out']")
-    //public  WebElement signOut;
+    @FindBy(xpath= "//*[.='Sign Out']")
+    public  WebElement signOut1;
     @FindBy(xpath= "//*[.='Store Manager']")
     public  WebElement storeManager1;
     @FindBy(xpath= "//*[@class='wcfmfa fa-gift']")
@@ -1001,8 +991,6 @@ public class Page {
     @FindBy(xpath= "(//*[.='Percentage discount'])[1]")
     public  WebElement submitVerifyPercent;
     @FindBy(xpath= "(//h2)[2]")
-    public  WebElement editCoupon;
-    @FindBy(css= "[class='coupon-types coupon-types-fixed_product']")
     public  WebElement submitVerifyFixed;
     @FindBy(xpath= "//*[@class='wcfm_sub_menu_items wcfm_sub_menu_items_coupon_manage moz_class']")
     public  WebElement couponsAdd2;
@@ -1022,26 +1010,24 @@ public class Page {
     public  WebElement couponVerfyCouponAdı;
     @FindBy(xpath= "(//td)[3]")
     public  WebElement couponVerfyOran;
-    @FindBy(xpath= "//input[@id='quantity_64c8a932ab881']")
-    public  WebElement artıEksi;
-    @FindBy(xpath= "//*[@id='quantity_64c8ca12b06ce']")
-    public  WebElement xxxx;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath= "(//button)[6]")
+    public  WebElement lolbaby;
+    @FindBy(xpath= "(//*[.='Sign In'])[2]")
+    public  WebElement singIns;
+    @FindBy(xpath= "(//*[.='Apple'])[4]")
+    public  WebElement ürünApple;
+    @FindBy(xpath= "//*[@class='quantity']")
+    public  WebElement quantity;
+    @FindBy(xpath= " (//select)[2]")
+    public  WebElement selecttt;
+    @FindBy(xpath= "//*[@class='w-icon-list btn-showtype']")
+    public  WebElement ikonListe;
+    @FindBy(xpath= "//*[text()='Women’s White Handbag']")
+    public  WebElement cantaÜrün;
+    @FindBy(xpath= "(//*[.='Çanta'])[2]")
+    public  WebElement cantaÜrün2;
+    @FindBy(xpath= "(//*[.='Çanta'])[2]")
+    public  WebElement cantaÜrün3;
 
 
 
