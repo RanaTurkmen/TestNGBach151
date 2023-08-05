@@ -23,8 +23,8 @@ public class TC004 extends ExtentReport {
         //Sayfaya Vendor olarak giriş yap
         Page page = new Page();
         page.singIns.click();
-        page.emailAdres.sendKeys("yisrael.zaylan@fixedfor.com", Keys.TAB,
-                "Bb123456", Keys.TAB, Keys.ENTER);
+        page.emailAdres.sendKeys(ConfigReader.getProperty("emailAdres4"), Keys.TAB,
+                ConfigReader.getProperty("sifre4"), Keys.TAB, Keys.ENTER);
         extentTest.info("Vendor giriş yapıldı");
 
 
