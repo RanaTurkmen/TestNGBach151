@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.Page;
@@ -13,40 +14,33 @@ import utilities.ExtentReport;
 import utilities.ReusableMethods;
 
 public class TC002 extends ExtentReport {
+
+
     /*
-    "Vendor (Satıcı) olarak, siteye kayıt yapılabilmeli.(Vendor Registration)"
-    Register ekranından, Sign Up sekmesini kullanarak "Become a Vendor" linki ile giriş yapılabilmeli
-    e-mail adresi girmeli
-    Verification Code text kutusuna geldiğinde "Verification code sent to your email: abc@abc.com." mesajını görmeli
-    Mail adresine gelen konu Verification Code text kutusuna girmeli
-    Password yazmalı. Password: kucuk harf, büyük harf, rakam ve special karakter içermeli
-    Password'ü tekrar yazmalı
-    Register butonuna tıklayarak vendor olarak kayıtı tamamlamalı
-    Kayıtlı bir e-mail adresi ile kayıt olmaya çalıştığında "This Email already exists. Please login to the site and apply as vendor." mesajını almalı
-     */
+        "Vendor (Satıcı) olarak, siteye kayıt yapılabilmeli.(Vendor Registration)"
+        Register ekranından, Sign Up sekmesini kullanarak "Become a Vendor" linki ile giriş yapılabilmeli
+        e-mail adresi girmeli
+        Verification Code text kutusuna geldiğinde "Verification code sent to your email: abc@abc.com." mesajını görmeli
+        Mail adresine gelen konu Verification Code text kutusuna girmeli
+        Password yazmalı. Password: kucuk harf, büyük harf, rakam ve special karakter içermeli
+        Password'ü tekrar yazmalı
+        Register butonuna tıklayarak vendor olarak kayıtı tamamlamalı
+        Kayıtlı bir e-mail adresi ile kayıt olmaya çalıştığında "This Email already exists. Please login to the site and apply as vendor." mesajını almalı
+         */
+    Page page=new Page();
+    SoftAssert softAssert=new SoftAssert();
     @Test
     public void test01() {
         extentTest = extentReports.createTest("Vendor Kaydı US009 TC02", "Vendor (Satıcı) olarak, siteye kayıt yapılabilmeli.(Vendor Registration)");
 
-        //Anasayfaya git
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        ReusableMethods.venderKayit();
         extentTest.info("Anasayfaya gidildi.");
-        ReusableMethods.tumSayfaResmi("Anasayfa resmi");
-        extentTest.info("Tum sayfa resmi alındı.");
-        //Sign In butonuna tıkla.
-        Page page = new Page();
-        page.signIn.click();
-        extentTest.info("Sign In butonuna tıklandı.");
-        //SIGN UP butonuna tıkla.
-        page.signUp.click();
-        //Çıkan ekranda "Become a Vendor" butonuna tıkla.
-        Assert.assertTrue(page.BecomeVendor.isDisplayed());
-        page.BecomeVendor.click();
-        extentTest.info("Çıkan ekranda Become a Vendor butonuna tıklandı.");
+        extentTest.info("Tum sayfa resmi alındı");
+        extentTest.info("Register butonuna tiklandı");
+        extentTest.pass("Çıkan ekranda 'Become a Vendor' yazısının göründüğü doğrulandı.");
+        extentTest.info("Become a Vendor butonuna tıklandı.");
+        extentTest.pass("Vendor Registration sayfasının göründüğü doğrulandı");
 
-        //Vendor Registration sayfasının göründüğünü doğrula.
-        Assert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), page.VendorRegistrationYazisi.getText());
-        extentTest.pass("Vendor Registration sayfasının göründüğü doğrulandı.");
         //Registration alanındaki REGISTER butonuna tikla
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -75,7 +69,7 @@ public class TC002 extends ExtentReport {
         ReusableMethods.webElementResmi(page.erroremail);
         extentTest.info("Webelement resmi alındı.");
         //Email alanina geçersiz email gir.
-        page.email.sendKeys(ConfigReader.getProperty("gecersizemail"));
+        page.email.sendKeys(ConfigReader.getProperty("gecersizemaill"));
         extentTest.info("Email alanina geçersiz email girildi.");
 
         //Email alanı dışında boşluğa tıkla.
@@ -173,33 +167,13 @@ public class TC002 extends ExtentReport {
     @Test
     public void test02() {
         extentTest = extentReports.createTest("Extent Report", "Allover test raporu");
-        //Anasayfaya git
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        ReusableMethods.venderKayit();
         extentTest.info("Anasayfaya gidildi.");
-
-
-        //Register butonuna tikla
-        Page page = new Page();
-        page.registion.click();
-        ReusableMethods.bekle(2);
+        extentTest.info("Tum sayfa resmi alındı");
         extentTest.info("Register butonuna tiklandı");
-
-
-        //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(page.BecomeVendor.isDisplayed());
-        extentTest.pass("Become a Vendor yazısının göründüğünü doğrulandı.");
-
-
-        //Çıkan ekranda "Become a Vendor" butonuna tıkla.
-        page.BecomeVendor.click();
+        extentTest.pass("Çıkan ekranda 'Become a Vendor' yazısının göründüğü doğrulandı.");
         extentTest.info("Become a Vendor butonuna tıklandı.");
-
-
-        //Vendor Registration sayfasını doğrula.
-        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), page.VendorRegistrationYazisi.getText());
         extentTest.pass("Vendor Registration sayfasının göründüğü doğrulandı");
-
 
         //Email alanina email gir.
         Driver.getDriver().switchTo().newWindow(WindowType.WINDOW);
@@ -249,7 +223,7 @@ public class TC002 extends ExtentReport {
         page.veryficationCodeKutusu.sendKeys(Keys.TAB, Keys.TAB,
                 ConfigReader.getProperty("gecerliPassword"),
                 Keys.TAB,
-                ConfigReader.getProperty("gecersizPassword"), Keys.ENTER);
+                ConfigReader.getProperty("gecersizPasswordd"), Keys.ENTER);
         extentTest.info("Password alanina en az 6 karakterli kucuk harf, büyük harf, rakam ve special karakter içeren password girildi.");
         extentTest.info("Confirm Password alanina aynı password girildi.");
         extentTest.info("Emaile gelen doğrulma kodunu Verification Code text kutusuna girildi.");
@@ -282,34 +256,24 @@ public class TC002 extends ExtentReport {
 
     }
 
-
-    @Test
-    public void test03() {
+    @DataProvider
+    public static Object[][] password() {
+        return new Object[][]{{ConfigReader.getProperty("gecersizPasswordd")},
+                              {ConfigReader.getProperty("Weak02")},
+                              {ConfigReader.getProperty("Weak03")},
+                              {ConfigReader.getProperty("Weak04")},
+                              {ConfigReader.getProperty("kisa")},
+        };
+    }
+    @Test(dataProvider = "password")
+    public void test03(String password) {
         extentTest = extentReports.createTest("Extent Report", "Allover test raporu");
-        //Anasayfaya git
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        ReusableMethods.venderKayit();
         extentTest.info("Anasayfaya gidildi.");
-        ReusableMethods.tumSayfaResmi("AnaSayfa");
         extentTest.info("Tum sayfa resmi alındı");
-
-        //Register butonuna tikla
-        Page page = new Page();
-        page.registion.click();
-        ReusableMethods.bekle(2);
         extentTest.info("Register butonuna tiklandı");
-
-        //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(page.BecomeVendor.isDisplayed());
-
         extentTest.pass("Çıkan ekranda 'Become a Vendor' yazısının göründüğü doğrulandı.");
-
-        //Çıkan ekranda "Become a Vendor" butonuna tıkla.
-        page.BecomeVendor.click();
         extentTest.info("Become a Vendor butonuna tıklandı.");
-
-        //Vendor Registration sayfasını doğrula.
-        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), page.VendorRegistrationYazisi.getText());
         extentTest.pass("Vendor Registration sayfasının göründüğü doğrulandı");
 
         //Email alanina email gir.
@@ -356,20 +320,24 @@ public class TC002 extends ExtentReport {
         //Gecersiz sifre ile "Password strength should be atleast "Good"" message'ını doğrula
         page.veryficationCodeKutusu.sendKeys(Keys.PAGE_DOWN);
         page.veryficationCodeKutusu.sendKeys(Keys.TAB, Keys.TAB,
-                ConfigReader.getProperty("gecersizPassword"),
+                password,
                 Keys.TAB,
-                ConfigReader.getProperty("gecersizPassword"), Keys.ENTER);
+                password, Keys.ENTER);
 
         ReusableMethods.bekle(2);
         softAssert.assertEquals(ConfigReader.getProperty("goodMessage"), page.messageError.getText(),"Password strength should be atleast Good message'ı görülmedi");
-        extentTest.fail("Gecersiz password ile giriş yapılamamalı");
+
+
         extentTest.info("Password alanina en az 6 karakterli kucuk harf, büyük harf, rakam ve special karakter içermeyen password girildi.");
         extentTest.info("Confirm Password alanina aynı password girildi.");
         extentTest.info("Password strength should be atleast Good message'ı doğrulandı");
+        extentTest.fail("Gecersiz password ile giriş yapıldı");
         ReusableMethods.webElementResmi(page.messageError);
         extentTest.info("Webelement resmi alındı.");
         softAssert.assertAll();
 
 
     }
+
+
 }

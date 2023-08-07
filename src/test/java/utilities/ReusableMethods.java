@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 import pages.Page;
 
 import java.awt.*;
@@ -248,6 +249,28 @@ public class ReusableMethods {
 
 
     }
+
+
+
+    public static void venderKayit() {
+        //Anasayfaya git
+        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        ReusableMethods.tumSayfaResmi("AnaSayfa");
+        //Register butonuna tikla
+        Page page = new Page();
+        page.registion.click();
+        ReusableMethods.bekle(2);
+        //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(page.BecomeVendor.isDisplayed());
+        //Çıkan ekranda "Become a Vendor" butonuna tıkla.
+        page.BecomeVendor.click();
+        //Vendor Registration sayfasını doğrula.
+        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), page.VendorRegistrationYazisi.getText());
+
+    }
+
+
 
 
 }

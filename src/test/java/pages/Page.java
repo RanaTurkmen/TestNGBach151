@@ -399,8 +399,8 @@ public class Page {
   //Rana
     @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registion;
-    // @FindBy(xpath = "//span[.='Sign In']")
-    // public WebElement signIn;
+    @FindBy(xpath = "//span[.='Sign In']")
+    public WebElement signIn;
     //@FindBy(xpath = "//a[.='Sign Up']")
     //public WebElement signUp;
     @FindBy(xpath = "(//a[@href='https://allovercommerce.com/vendor-register/'])[2]")
@@ -646,8 +646,8 @@ public class Page {
 
 
     //Oguzhan Aydin
-    @FindBy(xpath = "//*[text()='Sign In']")
-    public WebElement signIn;
+    //@FindBy(xpath = "//*[text()='Sign In']")
+    //public WebElement signIn;
     @FindBy(xpath = "//*[@href='signup']")
     public WebElement kayitliUsername;
     @FindBy(xpath = "//*[@id='password']")

@@ -27,33 +27,15 @@ public class TC001 extends ExtentReport {
     @Test
     public void test01() {
         extentTest = extentReports.createTest("Vendor Kaydı US009 TC01", "Vendor (Satıcı) olarak, siteye kayıt yapılabilmeli.(Vendor Registration)");
-
-        //Anasayfaya git
-        Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+        Page page=new Page();
+        SoftAssert softAssert=new SoftAssert();
+        ReusableMethods.venderKayit();
         extentTest.info("Anasayfaya gidildi.");
-        ReusableMethods.tumSayfaResmi("Anasayfa resmi");
-        extentTest.info("Tum sayfa resmi alındı.");
-        //Register butonuna tikla
-        Page page = new Page();
-        page.registion.click();
-        ReusableMethods.bekle(2);
+        extentTest.info("Tum sayfa resmi alındı");
         extentTest.info("Register butonuna tiklandı");
-
-        //Çıkan ekranda "Become a Vendor" yazısının göründüğünü doğrula.
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(page.BecomeVendor.isDisplayed());
-        extentTest.pass("Become a Vendor yazısının göründüğünü doğrulandı.");
-        ReusableMethods.webElementResmi(page.become);
-
-        //Çıkan ekranda "Become a Vendor" butonuna tıkla.
-        page.BecomeVendor.click();
+        extentTest.pass("Çıkan ekranda 'Become a Vendor' yazısının göründüğü doğrulandı.");
         extentTest.info("Become a Vendor butonuna tıklandı.");
-
-        //Vendor Registration sayfasını doğrula.
-        softAssert.assertEquals(ConfigReader.getProperty("vendorSayfasi"), page.VendorRegistrationYazisi.getText());
         extentTest.pass("Vendor Registration sayfasının göründüğü doğrulandı");
-        ReusableMethods.tumSayfaResmi("VendorRegistration");
-        extentTest.info("Ekran görüntüsü alındı.");
 
         //Email alanina email gir.
         Driver.getDriver().switchTo().newWindow(WindowType.WINDOW);
@@ -113,8 +95,8 @@ public class TC001 extends ExtentReport {
         ReusableMethods.bekle(1);
         softAssert.assertEquals(ConfigReader.getProperty("registionSuccess"), page.successlogin.getText());
         extentTest.pass("Registration Successfully Completed. Yazısın çıktığını doğrula");
-        ReusableMethods.webElementResmi(page.successlogin);
-        extentTest.info("Webelement resmi alındı.");
+        //ReusableMethods.webElementResmi(page.successlogin);
+        //extentTest.info("Webelement resmi alındı.");
 
         //Yeni açılan sayfada "Welcome to Allover Commerce!" yazısını görüdüğünü doğrula
         ReusableMethods.bekle(2);
